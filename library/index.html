@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <div class="body__wrapper">
+        <header class="header">
+
+            <!-- <div class="header-inner"> -->
+
+            <h1>Brooklyn Public Library</h1>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item"><a class="nav__list-item-link" href="#about">About</a></li>
+                    <li class="nav__list-item"><a class="nav__list-item-link" href="#favorites">Favorites</a></li>
+                    <li class="nav__list-item"><a class="nav__list-item-link" href="#cofee-shop">Coffee shop</a></li>
+                    <li class="nav__list-item"><a class="nav__list-item-link" href="#contacts">Contacts</a></li>
+                    <li class="nav__list-item"><a class="nav__list-item-link" href="#library-cards">Library Card</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <img class="icon" src="icons/icon_profile.svg" alt="icon_profile">
+
+            <!-- </div> -->
+
+        </header>
+        <main class="main">
+            <section class="welcome">
+                <!-- <div class="welcome__inner"> -->
+                <div class="welcome__inner-rectangle">
+                    <h2 class="welcome__inner-rectangle-text">Welcome<br>
+                        to the Brooklyn Library</h2>
+                </div>
+                <!-- </div> -->
+            </section>
+            <section class="about" id="about">
+
+                <h2 class="section__title">About</h2>
+                <div class="title__underline"></div>
+                <div class="about__text">The Brooklyn Library is a free workspace, a large number of books and a cozy
+                    coffee
+                    shop inside </div>
+                <div class="about__images">
+                    <img class="about__images-item" src="images/girl.jpg" alt="girl-in-library" title="girl-in-library">
+                    <img class="about__images-item" src="images/busts.jpg" alt="busts" title="busts">
+                    <img class="about__images-item" src="images/books.jpg" alt="books" title="books">
+                    <img class="about__images-item" src="images/ladder.jpg" alt="ladder" title="ladder">
+                    <img class="about__images-item" src="images/columns.jpg" alt="columns" title="columns">
+
+                </div>
+                <!-- <div class="pagination-wrapper">
+                <div class="pagination-wrapper__first-button"></div>
+                <div class="pagination-wrapper__second-button"></div>
+                <div class="pagination-wrapper__third-button"></div>
+            </div> -->
+
+                <div class="pagination-wrapper">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="16" viewBox="0 0 68 16" fill="none"
+                        class="paginaton">
+                        <a href="#" class="pagination__text">
+                            <rect width="16" height="16" rx="8" fill="#BB945F" />
+                        </a>
+                        <a href="#" class="pagination__text">
+                            <rect x="26" width="16" height="16" rx="8" fill="#0C0C0E" />
+                        </a>
+                        <a href="#" class="pagination__text">
+                            <rect x="52" width="16" height="16" rx="8" fill="#0C0C0E" />
+                        </a>
+                    </svg>
+
+                </div>
+            </section>
+            <section class="favorites" id="favorites">
+
+                <h2 class="section__title">Favorites</h2>
+                <div class="title__underline"></div>
+                <p class="favorites__text">Pick favorites of season</p>
+
+                <div class="favorites__radio-buttons">
+                    <label class="favorites__radio-buttons-label">
+                        <input class="favorites__real-button" type="radio" name="season" checked>
+                        <span class="favorites__fake-button"></span>
+                        Winter</label>
+                    <label class="favorites__radio-buttons-label">
+                        <input class="favorites__real-button" type="radio" name="season">
+                        <span class="favorites__fake-button"></span>
+                        Spring</label>
+                    <label class="favorites__radio-buttons-label">
+                        <input class="favorites__real-button" type="radio" name="season">
+                        <span class="favorites__fake-button"></span>
+                        Summer</label>
+                    <label class="favorites__radio-buttons-label">
+                        <input class="favorites__real-button" type="radio" name="season">
+                        <span class="favorites__fake-button"></span>
+                        Autumn</label>
+                </div>
+                <div class="favotites__items">
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE BOOK EATERS<br>
+                            By Sunyi Dean</p>
+                        <div class="favorites__items-descrition">An unusual sci-fi story about a book eater woman who
+                            tries
+                            desperately to save her dangerous mind-eater son from tradition and certain death. Complete
+                            with
+                            dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not
+                            for
+                            the faint of heart.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book1.png" alt="The Book Eaters">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">CACKLE<br>
+                            By Rachel Harrison</p>
+                        <div class="favorites__items-descrition">Are your Halloween movies of choice The Witches of
+                            Eastwick and Practical Magic? Look no further than here - where a woman recovering from a
+                            breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book2.png" alt="CACKLE">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">DANTE: POET OF THE SECULAR WORLD<br>
+                            By Erich Auerbach</p>
+                        <div class="favorites__items-descrition">Auerbach's engaging book places the 'Comedy' within the
+                            tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one
+                            who raised the individual and his drama of soul into something of divine significance—an
+                            inspired introduction to Dante's main themes.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book3.png"
+                                alt="DANTE: POET OF THE SECULAR WORLD">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+                    <div class="favotites__items-item">
+                        <p class="favotites__items-staff">Staff Picks</p>
+                        <div class="favorites__items-underline"></div>
+                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                            By Clive Irving</p>
+                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
+                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
+                            world has changed around them.
+                        </div>
+                        <button class="favorites__items-button">Buy</button>
+                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+            <section class="cofee-shop" id="cofee-shop">
+
+                <h2 class="section__title">Coffee shop</h2>
+                <div class="title__underline"></div>
+                <p class="cofee-shop__text">In our library, we have of cozy coffee shop, welcoming in customers with
+                    frothy cappuccinos and friendly conversation. <br>
+                    You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also
+                    you can try desserts from bakery.</p>
+                <div class="menu">
+                    <div class="menu__left">
+                        <div class="menu__left-title">Coffee & Tea</div>
+
+                        <!-- <div class="menu__left-items"> -->
+                        <div class="menu__left-item">
+                            <div class="menu__left-item-name">Cold Brew Coffee</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$3</div>
+                        </div>
+                        <div class="menu__left-item">
+                            <div class="menu__left-item-name">French Press Pot</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$5</div>
+                        </div>
+
+                        <div class="menu__left-item">
+                            <div class="menu__left-item-name">Espresso</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$2</div>
+                        </div>
+                        <div class="menu__left-item">
+                            <div class="menu__left-item-name">Cappuccino</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$4</div>
+                        </div>
+                        <div class="menu__left-item">
+                            <div class="menu__left-item-name">Hot tea</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$2</div>
+                        </div>
+                        <div class="menu__left-item">
+                            <div class="menu__left-item-name">Cold tea</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$2</div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="menu__right">
+                        <div class="menu__right-title">Desserts & Cakes</div>
+                        <div class="menu__right-item">
+                            <div class="menu__right-item-name">Forest Gateau</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$16</div>
+                        </div>
+                        <div class="menu__right-item">
+                            <div class="menu__right-item-name">Blue Moon</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$16</div>
+                        </div>
+
+                        <div class="menu__right-item">
+                            <div class="menu__right-item-name">Truffle Cake</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$15</div>
+                        </div>
+                        <div class="menu__right-item">
+                            <div class="menu__right-item-name">Chocolate Cake</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$18</div>
+                        </div>
+                        <div class="menu__right-item">
+                            <div class="menu__right-item-name">Poets Dream Cake</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$16</div>
+                        </div>
+                        <div class="menu__right-item">
+                            <div class="menu__right-item-name">Pineapple Cake</div>
+                            <div class="menu__item-line"></div>
+                            <div class="menu__item-prise">$14</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="contacts" id="contacts">
+
+                <h2 class="section__title">Our Contacts</h2>
+                <div class="title__underline"></div>
+                <div class="contacts__wrapper">
+
+
+                    <div class="contacts__info">
+                        <div class="contacts__info-bold-text">For all Library inquiries:</div>
+                        <p class="contacts__info-normal-text">Please call <a href="tel:6177302370">(617) 730-2370</a>
+                        </p>
+                        <p class="contacts__info-normal-text">For TTY service, please call <a
+                                href="tel:6177302370">(617)
+                                730-2370</a></p>
+                        <p class="contacts__info-normal-text">Putterham Library: <a href="tel:6177302385">(617)
+                                730-2385</a>
+                        </p>
+                        <div class="contacts__info-staff">Senior Staff</div>
+                        <!-- <span
+                            style="font-family: Inter; font-size: 20px; margin-left: 20px; letter-spacing: 2px;">Library
+                            Director: <span style="font-weight: 700;"><a href="mailto:#">
+                                    Amanda
+                                    Hirst
+                                </a></span></span> -->
+                        <span class="contacts__info-normal-text">Library Director: </span>
+                        <span class="contacts__info-amanda"><a href="mailto:#">Amanda Hirst</a></span>
+
+                    </div>
+
+
+
+                    <div class="contacts__map">
+                        <img class="contacts__map-map" src="images/map.png" alt="map">
+                    </div>
+                </div>
+
+
+            </section>
+
+
+
+
+            <section class="library-cards" id="library-cards">
+                <h2 class="section__title">Digital Library Cards</h2>
+                <div class="title__underline"></div>
+
+                <div class="library-cards__wrapper">
+
+
+                    <div class="cards-find">
+                        <p class="cards-find__text">Find your Library card</p>
+                        <form class="cards-find__form" action="#">
+                            <div class="cards-find__inner">
+                                <h3 class="cards-find__title">Brooklyn Public Library</h3>
+                                <input class="cards-find__input-one" type="text" placeholder="Reader's name">
+                                <input class="cards-find__input-two" type="text" placeholder="Card number">
+                            </div>
+                            <button class="cards-find__button" type="submit">Check the card</button>
+
+                        </form>
+                    </div>
+
+
+
+
+
+
+                    <div class="cards-get">
+                        <h3 class="library-cards__title">Get a reader card</h3>
+                        <p class="cards-get__text">You will be able to see a reader card after logging into account or
+                            you can register a new
+                            account</p>
+                        <div class="cards-get__buttons">
+                            <button class="sign-button">Sign Up</button>
+                            <button class="sign-button">Log in</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <div class="one">
+                <div class="one__left">286 Cadman Plaza, New York,<br>NY 11238, United States</div>
+                <div class="one__right">Mon - Fri<br>
+                    08:00 am - 07:00 pm</div>
+            </div>
+            <div class="two">
+                <div class="two__left">
+                    <a href="https://twitter.com/"><img src="icons/twitter.svg" alt="twitter"></a>
+                    <a href="https://www.instagram.com/"><img src="icons/instagram.svg" alt="instagram"></a>
+                    <a href="https://www.facebook.com/"><img src="icons/facebook.svg" alt="facebook"></a>
+                </div>
+                <div class="two__right">Sat - Sun<br>
+                    10:00 am - 06:00 pm</div>
+            </div>
+            <div class="three"></div>
+            <div class="four">
+                <div class="four__left">2023</div>
+                <div class="four__center"><a href="https://rs.school/js-stage0/">The Rolling Scopes School</a></div>
+                <div class="four__right"><a href="https://github.com/hapurzhonau">hapurzhonau</a></div>
+            </div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
