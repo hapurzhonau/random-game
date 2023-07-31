@@ -156,17 +156,20 @@ h1{
     display: none;
 }
 
-/* .pagination-wrapper{
+.pagination-wrapper{
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 40px 0;    
+    /* gap: 10px; */
+    margin: 35px 0 35px;    
 }
 .pagination-wrapper__first-button{
     background: #BB945F;
     width: 16px;
     height: 16px;
-    border-radius: 8px;
+  
+    cursor: pointer;
+    border: 5px solid #fff;
+    border-radius: 50%;
 }
 .pagination-wrapper__second-button,
 .pagination-wrapper__third-button{
@@ -174,10 +177,11 @@ h1{
     width: 16px;
     height: 16px;
     border-radius: 8px;
-} */
-.pagination-wrapper{
-    margin:40px auto 38px auto;
+    cursor: pointer;
+    border: 5px solid #fff;
+    border-radius: 50%;
 }
+
 
 .favorites__text{
     text-align: start;
@@ -256,7 +260,7 @@ h1{
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 260px;
     grid-row-gap: 40px;
-    margin:30px 60px 40px 20px;
+    margin:35px 60px 40px 20px;
 
 }
 .favotites__items-item{
@@ -266,6 +270,7 @@ h1{
     position: relative;
     max-width: 550px;
     min-height: 555px;
+    box-sizing: border-box;
 }
 .favotites__items-staff{
     box-sizing: border-box;
@@ -309,6 +314,7 @@ h1{
     margin-left: 20px;
 }
 .favorites__items-button{
+    box-sizing: border-box;
     color: #0C0C0E;
     text-align: center;
     font-family: Inter;
@@ -317,12 +323,34 @@ h1{
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1px;
-    padding: 9px 27px;
+    /* padding: 9px 27px; */
+    width: 75px;
+    height: 30px;
     border-radius: 2px;
     border: 1px solid #0C0C0E;
     /* margin: auto auto 15px 20px; */
     background: none;
     cursor: pointer;
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+}
+.favorites__items-button-own{
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    /* padding: 9px 27px; */
+    width: 75px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    /* margin: auto auto 15px 20px; */
+    background: none;
     position: absolute;
     left: 20px;
     bottom: 15px;
@@ -363,7 +391,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 40px;
 letter-spacing: 2px;
-margin:35px 20px 40px;
+margin:40px 20px 40px;
 }
 .menu{
  display: flex;
@@ -519,13 +547,14 @@ text-transform: capitalize;
     display: flex;
     justify-content: space-between;
 }
+
 .cards-find{
-    margin: 40px auto 41px 20px;
+    margin:10px 344px 41px 20px;
+    width: 600px;
+    box-sizing: border-box;
 }
 
 .cards-find__text{
-    margin: 0 auto;
-    margin-bottom: 30px;
     color: #000;
     font-family: Inter;
     font-size: 30px;
@@ -535,7 +564,12 @@ text-transform: capitalize;
     letter-spacing: 0.6px; 
 }
 .cards-find__form{
-    display: block;
+    
+    box-sizing: border-box;
+    padding: 20px 20px 0;
+    height: 386px;
+    display: flex;
+    flex-direction: column;
     border: 3px solid #BB945F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   
@@ -544,7 +578,7 @@ text-transform: capitalize;
     background: #BB945F;
     display: flex;
     flex-direction: column;
-    margin: 17px;
+    margin: -3px;
 }
 .cards-find__title{
     color: #000;
@@ -555,9 +589,52 @@ text-transform: capitalize;
     line-height: 50px; 
     letter-spacing: 0.6px;
    text-align: start;
-   margin:20px auto 0 20px;
+   margin:20px auto -5px 20px;
 }
-.cards-find__input-one,
+.cards-find__input{
+    box-sizing: border-box;
+    height: 66px;
+    margin: 25px 20px 0;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 0 #BB945F;
+    color: #8E8E8E;
+font-family: Forum;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 50px; /* 166.667% */
+letter-spacing: 0.6px;
+}
+.cards-find__button-wrapper{
+    background: #FFF;
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+.cards-find__button{
+    cursor: pointer;
+    background: #fff;
+    box-sizing: border-box;
+    margin-top: 20px;
+    color: #0C0C0E;
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1px;
+padding: 10px 40px;
+border-radius: 2px;
+border: 1px solid #0C0C0E;
+}
+.cards-find__button:hover{
+    background: #BB945F;
+    border-color: #BB945F;
+    transition: 0.5s;
+   
+}
+/* .cards-find__input-one,
 .cards-find__input-two{
     color: #8E8E8E;
     font-family: Forum;
@@ -572,14 +649,14 @@ text-transform: capitalize;
     border-radius: 10px;
     padding-left: 20px;
 
-}
-.cards-find__input-one{
+} */
+/* .cards-find__input-one{
     margin:15px 10px 15px;
-}
-.cards-find__input-two{
+} */
+/* .cards-find__input-two{
     margin:0 0 20px 10px
-}
-.cards-find__button{
+} */
+/* .cards-find__button{
     background: #FFF;
     color: #0C0C0E;
     text-align: center;
@@ -595,7 +672,7 @@ text-transform: capitalize;
     border-radius: 2px;
     border: 1px solid #0C0C0E;
     margin: 0px auto 30px;
-}
+} */
 /* .cards-find__input{
     width: 520px;
     height: 66px;
@@ -654,12 +731,30 @@ line-height: normal;
 letter-spacing: 1px;
 border-radius: 2px;
 border: 1px solid #0C0C0E;
+cursor: pointer;
 }
+.sign-button:hover{
+    background: #BB945F;
+    border-color: #BB945F;
+    transition: 0.5s;
+    
+   
+}
+
+
+
+
+
+
+
+
+
 .footer{
     width: 1440px;
     margin:0 auto; 
     background: #0C0C0E;
     color:rgba(255, 255, 255, 1);
+    padding: 0;
 }
 .one,
 .two{
@@ -683,11 +778,16 @@ line-height: 20px;
     text-align: right;
 }
 .two__left{
+    
+    margin-left: 20px;
+    /* margin-top: 20px; */
+    text-align: left;
+}
+.social-list{
     display: flex;
     gap: 15px;
-    margin-left: 20px;
-    margin-top: 20px;
-    text-align: left;
+    padding-left: 20px;
+
 }
 .two__right{
     margin-right: 20px;
@@ -698,7 +798,7 @@ line-height: 20px;
     background: #FFF;
     width: 1400px;
     height: 1px;
-    margin: 30px auto 44px;
+    margin: 20px auto 44px;
 }
 .four{
     background: #0C0C0E;
@@ -725,4 +825,12 @@ letter-spacing: 2px;
     flex-grow: 1;
     flex-basis: 0;
     text-align: right;
+}
+.four__center-link:active,
+.four__center-link:hover{
+    opacity: 0.5;
+}
+.four__right-link:active,
+.four__right-link:hover{
+    opacity: 0.5;
 }
