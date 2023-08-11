@@ -150,6 +150,19 @@ h1{
     margin-top: 40px;
     margin-bottom: 20px;
 }
+.about__text_768{
+    display: none;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 40px 20px 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
 .about__images{
     display: flex;
     justify-content: center;
@@ -188,7 +201,9 @@ h1{
     border-radius: 50%;
 }
 .pagination-wrapper__second-button,
-.pagination-wrapper__third-button{
+.pagination-wrapper__third-button,
+.pagination-wrapper__fourth-button,
+.pagination-wrapper__fifth-button{
     background: #0c0c0e;
     width: 16px;
     height: 16px;
@@ -414,7 +429,7 @@ font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: 40px;
-letter-spacing: 2px;
+letter-spacing: 1.94px;
 margin:40px 20px 40px;
 }
 .menu{
@@ -933,16 +948,71 @@ letter-spacing: 2px;
     margin-bottom: 30px;
     margin-right: 0;
     }
-  
+    .about__text{
+        display: none;
+    }
+    .about__text_768{
+        display: block;
+    }
+    .about__images{
+        padding: 0;
+        min-height: 0;
+    }
     .about__images-item:not(:first-child){
         display: none;
         margin: 0;
     }
     .about__images-item{
-        margin: 0 0 -15px;
+        margin: 0;
+    }
+    .pagination-wrapper{
+        margin: 20px 0 35px;
+    }
+    .menu{
+        flex-direction: column;
+    }
+    .menu__left{
+        max-width: 461px;
+    }
+    .contacts__wrapper{
+        flex-direction: column;
+
+    }
+    .contacts__map{
+        margin: 100px auto 35px;
+    }
+    .library-cards__wrapper{
+        flex-direction: column;
+    }
+    .cards-find {
+        margin: 10px auto 0px;
+
+    }
+    .library-cards__title{
+        text-align: center;
+    }
+    .cards-get{
+        width: 600px;
+        margin: -9px auto;
+    }
+    .cards-get__text{
+        margin: 40px auto;
+        text-align: center;
+    }
+    .cards-get__buttons{
+        margin-bottom: 50px;
+        justify-content: center;
     }
 
 }
 @media(max-width:768px){
-
+    .four__left{
+        margin-right: auto;
+    }
+    .four__right{
+        padding-left: 53px;
+    }
+    .four__center{
+       margin-right: auto;
+    }
 }
