@@ -1,14 +1,12 @@
 const burger = document?.querySelector('.burger');
 const nav = document?.querySelector('.nav');
 const body = document?.querySelector('body');
-const navLink = document.querySelectorAll("li")
-
-
+const navLink = document.querySelectorAll("li");
 
 burger.addEventListener('click', function () {
     nav.classList.toggle('nav--invisible');
     burger.classList.toggle('burger--activ');
-    // body.classList.toggle('no-scroll');
+    body.classList.remove('body')
 })
 
 
