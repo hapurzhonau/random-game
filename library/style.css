@@ -7,6 +7,8 @@ body{
     text-align: center;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+
 }
 .body__wrapper{
     max-width: fit-content;
@@ -70,11 +72,11 @@ h1{
 }
 
 .welcome{
-   
-    background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%), url(images/Welcome.png);
+    display: flex;
+    background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%), url(images/welcome.jpeg);
+    background-position: center;
+    background-size:100%;
     height: 600px;
-    background-size: cover;
-    text-align: center;
     max-width: 1440px;
     margin: 0 auto;
     position: relative;
@@ -881,7 +883,7 @@ line-height: 20px;
 
 
 
-@media(max-width: 1024px){
+@media(max-width: 1047px){
     .icon{
         margin-right:40px ;
     }
