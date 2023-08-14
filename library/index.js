@@ -4,22 +4,21 @@ const body = document?.querySelector('body');
 const navLink = document.querySelectorAll("li");
 
 burger.addEventListener('click', function () {
-    nav.classList.toggle('nav--invisible');
+    nav.classList.toggle('nav--visible');
     burger.classList.toggle('burger--activ');
-    body.classList.remove('body')
 })
 
 
 
 navLink.forEach(function (el) {
     return el.addEventListener('click', function () {
-        nav?.classList.remove('nav--invisible');
+        nav?.classList.remove('nav--visible');
     })
 })
 
 body.addEventListener('click', (event) => {
     if (!burger.contains(event.target)) {
-        nav.classList.remove('nav--invisible');
+        nav.classList.remove('nav--visible');
         burger.classList.remove('burger--activ');
     }
 
