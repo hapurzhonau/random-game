@@ -1,11 +1,15 @@
-const burger = document?.querySelector('.burger');
-const nav = document?.querySelector('.nav');
-const body = document?.querySelector('body');
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+const body = document.querySelector('body');
 const navLink = document.querySelectorAll("li");
+const bodyStopScroll = document.querySelector(".body__wrapper--locked");
+
 
 burger.addEventListener('click', function () {
     nav.classList.toggle('nav--visible');
     burger.classList.toggle('burger--activ');
+    bodyStopScroll.classList.toggle('body__wrapper--locked');
+
 })
 
 
