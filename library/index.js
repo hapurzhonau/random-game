@@ -2,14 +2,13 @@ const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav');
 const body = document.querySelector('body');
 const navLink = document.querySelectorAll("li");
-const bodyStopScroll = document.querySelector(".body__wrapper--locked");
+const bodyStopScroll = document.querySelector(".body__wrapper");
 
 
 burger.addEventListener('click', function () {
     nav.classList.toggle('nav--visible');
     burger.classList.toggle('burger--activ');
-    bodyStopScroll.classList.toggle('body__wrapper--locked');
-
+    body.classList.toggle('body--locked');
 })
 
 
@@ -17,6 +16,7 @@ burger.addEventListener('click', function () {
 navLink.forEach(function (el) {
     return el.addEventListener('click', function () {
         nav?.classList.remove('nav--visible');
+        body.classList.remove('body--locked');
     })
 })
 
@@ -24,9 +24,16 @@ body.addEventListener('click', (event) => {
     if (!burger.contains(event.target)) {
         nav.classList.remove('nav--visible');
         burger.classList.remove('burger--activ');
+        body.classList.remove('body--locked');
     }
 
 });
+// body.addEventListener('wheel', function (event) {
+//     if (nav.contains(event.target)) {
+//         event.preventDefault();
+//     }
+// })
+
 
 console.log(`1. Верстка валидная +10\n
 2.Вёрстка семантическая +16\n
