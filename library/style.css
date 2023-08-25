@@ -11,8 +11,8 @@ body{
     margin: 0 auto;
     height: 100%;
 }
-.body__wrapper--locked{
-    overflow: hidden;
+.body--locked {
+    overflow-y: hidden;
 }
 
 a{
