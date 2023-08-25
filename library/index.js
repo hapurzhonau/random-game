@@ -1,27 +1,28 @@
-const burger = document?.querySelector('.burger');
-const nav = document?.querySelector('.nav');
-const body = document?.querySelector('body');
-const navLink = document.querySelectorAll("li")
-
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+const body = document.querySelector('body');
+const navLink = document.querySelectorAll("li");
+const bodyStopScroll = document.querySelector(".body__wrapper--locked");
 
 
 burger.addEventListener('click', function () {
-    nav.classList.toggle('nav--invisible');
+    nav.classList.toggle('nav--visible');
     burger.classList.toggle('burger--activ');
-    // body.classList.toggle('no-scroll');
+    bodyStopScroll.classList.toggle('body__wrapper--locked');
+
 })
 
 
 
 navLink.forEach(function (el) {
     return el.addEventListener('click', function () {
-        nav?.classList.remove('nav--invisible');
+        nav?.classList.remove('nav--visible');
     })
 })
 
 body.addEventListener('click', (event) => {
     if (!burger.contains(event.target)) {
-        nav.classList.remove('nav--invisible');
+        nav.classList.remove('nav--visible');
         burger.classList.remove('burger--activ');
     }
 
