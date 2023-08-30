@@ -13,17 +13,14 @@ body{
 }
 .body--locked {
     overflow-y: hidden;
-}
-
+    }
 a{
     text-decoration: none;
     color: inherit;
-}
-
+    }
 li{
     list-style: none;
-}
-
+    }
 .header{
     background: #0c0c0e;
     color: rgb(255, 255, 255);
@@ -44,10 +41,8 @@ h1{
     margin-right: auto;
     margin: 20px auto 20px 20px;
 }
-
 .nav__list{
     display: flex;
-    /* gap: 30px; */
     font-family: 'Inter';
     font-size: 20px;
     font-style: normal;
@@ -67,11 +62,9 @@ h1{
     margin: 20px;
     margin-left: 40px;
 }
-
 .main{
     text-align: center;
 }
-
 .welcome{
     display: flex;
     background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%), url(images/welcome.jpeg);
@@ -82,7 +75,6 @@ h1{
     margin: 0 auto;
     position: relative;
 }
-
 .welcome__inner-rectangle{
     box-sizing: border-box;
     display: flex;
@@ -126,9 +118,7 @@ h1{
     justify-content: center;
     background: #FFF;
 }
-
-.section__title
-{
+.section__title{
     color: #0C0C0E;
     font-family: Forum;
     font-size: 40px;
@@ -170,7 +160,6 @@ h1{
     margin-top: 40px;
     margin-bottom: 20px;
 }
-
 .swiper {
     margin: 0;
     box-sizing: border-box;
@@ -183,13 +172,20 @@ h1{
     width: 100%;
     z-index: 0;
    }
-  
    .swiper-button-next::after,.swiper-button-prev::after {
     font-size: 12px;
     color: black;
     display: none;
    }
-   
+   .swiper-button-next, .swiper-rtl .swiper-button-prev {
+    left: auto;
+    right: 10%;
+    top: 47%;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 10%;
+    top: 47%;
+}
    .swiper-pagination {
     box-sizing: border-box;
     position: static;
