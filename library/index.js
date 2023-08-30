@@ -28,12 +28,47 @@ body.addEventListener('click', (event) => {
     }
 
 });
-// body.addEventListener('wheel', function (event) {
-//     if (nav.contains(event.target)) {
-//         event.preventDefault();
-//     }
-// })
 
+
+// const paginationActiv = document.querySelectorAll('.pagination__button');
+
+
+// paginationActiv.forEach((el) => el.addEventListener('click', () => {
+//     el.classList.toggle('pagination__button--activ')
+// })
+// )
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 3,
+    spaceBetween: 25,
+
+
+
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        769: {
+            slidesPerView: 3,
+        },
+
+    }
+});
 
 console.log(`1. Верстка валидная +10\n
 2.Вёрстка семантическая +16\n

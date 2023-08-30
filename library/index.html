@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BPL</title>
+    <link rel="stylesheet" href="cdn.jsdelivr.net_npm_swiper@10_swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -61,45 +62,32 @@
                     cozy
                     coffee
                     shop inside </div>
-                <!-- <button></button> -->
-                <div class="about__images">
-                    <button class="btn-left"><img src="icons/left-arrow.svg" alt=""></button>
 
-                    <img class="about__images-item" src="images/girl.jpg" alt="girl-in-library" title="girl-in-library">
-                    <img class="about__images-item" src="images/busts.jpg" alt="busts" title="busts">
-                    <img class="about__images-item" src="images/books.jpg" alt="books" title="books">
-                    <img class="about__images-item" src="images/ladder.jpg" alt="ladder" title="ladder">
-                    <img class="about__images-item" src="images/columns.jpg" alt="columns" title="columns">
-                    <button class="btn-right"><img src="icons/right-arrow.svg" alt=""></button>
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img class="about__images-item" src="images/girl.jpg"
+                                alt="girl-in-library"></div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/busts.jpg" alt="busts">
+                        </div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/books.jpg" alt="books">
+                        </div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/ladder.jpg" alt="ladder">
+                        </div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/columns.jpg"
+                                alt="columns"></div>
 
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
 
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <!-- <button></button> -->
-                <div class="pagination-wrapper">
-                    <div class="pagination-wrapper__first-button"></div>
-                    <div class="pagination-wrapper__second-button"></div>
-                    <div class="pagination-wrapper__third-button"></div>
-                    <div class="pagination-wrapper__fourth-button"></div>
-                    <div class="pagination-wrapper__fifth-button"></div>
 
-                </div>
-                <!-- 
-                <div class="pagination-wrapper">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="16" viewBox="0 0 68 16" fill="none"
-                        class="paginaton">
-                        <a href="#" class="pagination__text">
-                            <rect width="16" height="16" rx="8" fill="#BB945F" />
-                        </a>
-                        <a href="#" class="pagination__text">
-                            <rect x="26" width="16" height="16" rx="8" fill="#0C0C0E" />
-                        </a>
-                        <a href="#" class="pagination__text">
-                            <rect x="52" width="16" height="16" rx="8" fill="#0C0C0E" />
-                        </a>
-                    </svg>
-
-                </div> -->
             </section>
             <section class="favorites" id="favorites">
 
@@ -557,6 +545,7 @@
             </div>
         </footer>
     </div>
+    <script src="cdn.jsdelivr.net_npm_swiper@10_swiper-bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
 

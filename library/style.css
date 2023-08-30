@@ -107,7 +107,14 @@ h1{
     letter-spacing: 3px;
     text-transform: uppercase;
 }
-.about, 
+.about{
+    max-width: 1440px;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFF;
+}
 .favorites,
 .cofee-shop,
 .contacts,
@@ -163,14 +170,60 @@ h1{
     margin-top: 40px;
     margin-bottom: 20px;
 }
-.about__images{
-    display: flex;
-    justify-content: center;
-   position: relative;
-    max-width: 1440px;
+
+.swiper {
+    margin: 0;
+    box-sizing: border-box;
     padding:0 20px;
+   }
+   .swiper-wrapper{
+    min-width: 0;
+    max-height: 560px;
+    min-height: 0;
+    width: 100%;
+    z-index: 0;
+   }
+  
+   .swiper-button-next::after,.swiper-button-prev::after {
+    font-size: 12px;
+    color: black;
+    display: none;
+   }
+   
+   .swiper-pagination {
+    box-sizing: border-box;
+    position: static;
+    text-align: center;
+    transition: 0.8s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 0;
+    margin-top: 35px;
+    margin-bottom: 31px;
 }
-.btn-left{
+.swiper-pagination-bullet{
+    background: #0c0c0e;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    opacity: 1;
+    margin: 0;
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 ;
+}
+.swiper-pagination-bullet-active{
+    background: #BB945F;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    opacity: 1;
+    margin: 0;
+}
+/* .btn-left{
     margin-right: 58px;
     margin-left: auto;
     width: 24px;
@@ -199,54 +252,12 @@ h1{
     cursor: pointer;
     outline: none;
 
-}
+} */
 .about__images-item{
-    max-width: 100%;
-    height: auto;
-    min-width: 0;
-    margin-right: 25px;
-}
-.about__images-item:nth-of-type(3){
-    margin-right: 0;
-}
-/* -------------hide the images 4 and 5 in the About section-------------- */
-.about__images-item:nth-of-type(4),
-.about__images-item:nth-of-type(5){
-    display: none;
-}
-
-.pagination-wrapper{
-    display: flex;
-    justify-content: center;
-    margin: 35px 0 35px;    
-}
-.pagination-wrapper__first-button{
-    background: #BB945F;
-    width: 16px;
-    height: 16px;
-  
-    cursor: pointer;
-    border: 5px solid #fff;
-    border-radius: 50%;
-}
-.pagination-wrapper__second-button,
-.pagination-wrapper__third-button,
-.pagination-wrapper__fourth-button,
-.pagination-wrapper__fifth-button{
-    background: #0c0c0e;
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 5px solid #fff;
-    border-radius: 50%;
-}
-.pagination-wrapper__fourth-button,
-.pagination-wrapper__fifth-button{
-    display: none;
-}
-
-
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 .favorites__text{
     text-align: start;
     color: #000;
@@ -259,7 +270,6 @@ h1{
 }
 .favorites__radio-buttons{
    display: flex;
-   /* gap: 80px; */
    margin-left: 15px;
    color: #000;
    font-family: Inter;
@@ -286,7 +296,6 @@ h1{
     width: 17px;
     height: 17px;
     background: url(icons/radio-outer.svg);
-    
 }
 .favorites__fake-button::before{
     content: "";
@@ -298,7 +307,6 @@ h1{
     right: 5px;
     font-weight: 700;
     display: none;
- 
 }
 .favorites__real-button{
     display: none;
@@ -322,7 +330,6 @@ h1{
 }
 .favotites__items-item:nth-child(2n+1) {
     margin-right: auto;
-    
 }
 .favotites__items-item{
     text-align: start;
@@ -334,7 +341,6 @@ h1{
     width: 100%; 
     margin-bottom: 40px; 
 }
-
 .favotites__items-staff{
     box-sizing: border-box;
     color: #000;
@@ -445,32 +451,31 @@ h1{
 }
 .cofee-shop__text{
     color: #000;
-text-align: center;
-font-family: Inter;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 40px;
-letter-spacing: 1.94px;
-margin:40px 20px 40px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 1.94px;
+    margin:40px 20px 40px;
 }
 .menu{
- display: flex;
- justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
-
 .menu__left-title{
     text-align: start;
     margin-left: 20px;
     margin-bottom: 40px;
     color: #BB945F;
-font-family: Forum;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: 40px; 
-letter-spacing: 2px;
-text-transform: capitalize;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: 2px;
+    text-transform: capitalize;
 }
 .menu__right-title{
     text-align: end;
@@ -484,7 +489,6 @@ text-transform: capitalize;
     letter-spacing: 2px;
     text-transform: capitalize;
 }
-
 .menu__left-item{
     align-items: center;
     display: flex;
@@ -493,10 +497,8 @@ text-transform: capitalize;
     gap: 60px;
     margin: 0 auto 40px 20px;
     display: flex;
-
 }
 .menu__right-item{
-
     display: flex;
     justify-content: end;
     align-items: center;
@@ -515,7 +517,6 @@ text-transform: capitalize;
     letter-spacing: 2px;
     text-transform: capitalize;
 }
-
 .menu__right-item-name{
     color: #000;
     font-family: Inter;
@@ -546,8 +547,7 @@ text-transform: capitalize;
 }
 .contacts__info{
     text-align: start;
-    min-width: 530px;
-    
+    min-width: 530px; 
 }
 .contacts__info-bold-text{
     margin: 40px 0 40px 20px;
@@ -605,28 +605,18 @@ text-transform: capitalize;
     min-width: 0;
     margin: auto;
 }
-
-
-
-
-
-
 .library-cards > .section__title{
     margin-top: 25px;
 }
-
-
 .library-cards__wrapper{
     display: flex;
     justify-content: space-between;
 }
-
 .cards-find{
     margin:10px auto 41px 20px;
     width: 600px;
     box-sizing: border-box;
 }
-
 .cards-find__text{
     color: #000;
     font-family: Inter;
@@ -645,7 +635,6 @@ text-transform: capitalize;
     flex-direction: column;
     border: 3px solid #BB945F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  
 }
 .cards-find__inner{
     background: #BB945F;
@@ -707,7 +696,6 @@ border: 1px solid #0C0C0E;
     transition: 0.5s;
    
 }
-
 .library-cards__title{
     text-align: end;
     color: #000;
@@ -721,7 +709,6 @@ border: 1px solid #0C0C0E;
 .cards-get{
     margin: 10px 20px 240px 0;
     width: 456px;
-
 }
 .cards-get__text{
    margin: 35px 0;
@@ -763,9 +750,6 @@ border: 1px solid #0C0C0E;
     
    
 }
-
-
-
 .footer{
     max-width: 1440px;
     margin:0 auto; 
@@ -852,10 +836,6 @@ line-height: 20px;
 .four__right-link:hover{
     opacity: 0.5;
 }
-
-
-
-
 .burger{
     display: none;
     box-sizing: border-box;
@@ -921,7 +901,6 @@ line-height: 20px;
 }
 
 /* ----------media querries 1047------------------ */
-
 @media(max-width: 1047px){
     .icon{
         margin-right:40px ;
@@ -929,14 +908,6 @@ line-height: 20px;
     .burger{
         display: block;
     }
-
-    .pagination-wrapper__fourth-button,
-    .pagination-wrapper__fifth-button{
-        display: block;
-    }
-
-
-
     .nav{
         transform: none;
         position: fixed;
@@ -960,42 +931,12 @@ line-height: 20px;
         margin-bottom: 30px;
         margin-right: 0;
     }
-
-
-   
-
-
-
     .about__text{
         display: none;
     }
     .about__text_768{
         display: block;
     }
-    .about__images{
-        /* padding: 0; */
-        /* min-height: 0; */
-    }
-    
-    /* .about__images-item:nth-of-type(2){
-        display: none;
-    } */
-
-    /* .about__images-item:not(:first-of-type)
-    {
-        display: none;
-      
-    }
-    */
-
-
-    .pagination-wrapper{
-        margin: 20px 0 35px;
-    }
-
-
-
-
     .menu{
         flex-direction: column;
     }
@@ -1046,16 +987,16 @@ line-height: 20px;
     .four__center{
        margin-right: auto;
     }
-    .about__images-item:not(:first-of-type){
-        display: none;
-    }
-     .about__images-item{
-        margin: 0;
-    }
-    .btn-left, .btn-right{
+
+    .swiper-button-next::after,.swiper-button-prev::after{
         display: block;
     }
+    .swiper-pagination {
+        margin-top: 20px;
+    }
 }
+
+
 /* ----------media querries 725-------------------- */
 @media(max-width:725px){
     .favorites__radio-buttons :not(:last-child){
