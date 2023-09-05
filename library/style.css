@@ -1,6 +1,18 @@
+.hidden{
+    display: none;
+}
+.bold{
+    font-weight: bold;
+}
 html{
     scroll-behavior: smooth; 
 }
+/* .transparent{
+    opacity: 0;
+}
+.opacity{
+    opacity: 1;
+} */
 body{
     background: #c2c2c2;
     text-align: center;
@@ -78,8 +90,8 @@ h1{
 .welcome__inner-rectangle{
     box-sizing: border-box;
     display: flex;
-    width: 600px;
-    height: 220px;
+    max-width: 600px;
+    max-height: 220px;
     padding: 35px 40px;
     justify-content: center;
     align-items: center;
@@ -160,65 +172,7 @@ h1{
     margin-top: 40px;
     margin-bottom: 20px;
 }
-.swiper {
-    margin: 0;
-    box-sizing: border-box;
-    padding:0 20px;
-   }
-   .swiper-wrapper{
-    min-width: 0;
-    max-height: 560px;
-    min-height: 0;
-    width: 100%;
-    z-index: 0;
-   }
-   .swiper-button-next::after,.swiper-button-prev::after {
-    font-size: 12px;
-    color: black;
-    display: none;
-   }
-   .swiper-button-next, .swiper-rtl .swiper-button-prev {
-    left: auto;
-    right: 10%;
-    top: 47%;
-}
-.swiper-button-prev, .swiper-rtl .swiper-button-next {
-    left: 10%;
-    top: 47%;
-}
-   .swiper-pagination {
-    box-sizing: border-box;
-    position: static;
-    text-align: center;
-    transition: 0.8s opacity;
-    transform: translate3d(0,0,0);
-    z-index: 0;
-    margin-top: 35px;
-    margin-bottom: 31px;
-}
-.swiper-pagination-bullet{
-    background: #0c0c0e;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    border: 5px solid #fff;
-    border-radius: 50%;
-    opacity: 1;
-    margin: 0;
-}
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 ;
-}
-.swiper-pagination-bullet-active{
-    background: #BB945F;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    border: 5px solid #fff;
-    border-radius: 50%;
-    opacity: 1;
-    margin: 0;
-}
+
 /* .btn-left{
     margin-right: 58px;
     margin-left: auto;
@@ -274,7 +228,7 @@ h1{
    font-weight: 400;
    line-height: normal;
 }
-.favorites__radio-buttons :not(:last-child){
+.favorites__radio-buttons-label:not(:last-of-type){
     margin-right: 80px;
 }
 .favorites__radio-buttons-label{
@@ -282,6 +236,7 @@ h1{
     padding: 5px;
     cursor: pointer;
 }
+
 .favorites__fake-button{
     display: inline-block;
     position: relative;
@@ -305,29 +260,22 @@ h1{
     display: none;
 }
 .favorites__real-button{
-    display: none;
+ display: none;
 }
+
 .favorites__real-button:checked + .favorites__fake-button::before{
     display: block;
 }
-.favorites__radio-buttons :first-child{
-    color: #000;
-    text-align: center;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-.favotites__items{
+.favorites__items{
     display: flex;
     flex-wrap: wrap;
     margin:35px 60px 40px 20px;
 }
-.favotites__items-item:nth-child(2n+1) {
+
+.favorites__items-item:nth-child(2n+1) {
     margin-right: auto;
 }
-.favotites__items-item{
+.favorites__items-item{
     text-align: start;
     border: 1px solid black;
     position: relative;
@@ -336,8 +284,12 @@ h1{
     box-sizing: border-box;
     width: 100%; 
     margin-bottom: 40px; 
+    transition: opacity 0.8s ease-in-out; 
 }
-.favotites__items-staff{
+.favorites__items-item.active{
+    opacity: 1;
+}
+.favorites__items-staff{
     box-sizing: border-box;
     color: #000;
     font-family: Forum;
@@ -355,7 +307,7 @@ h1{
     background: #bb945f;
     margin:-1px auto 20px 20px;
 }
-.favotites__items-book-title{
+.favorites__items-book-title{
     color: #000;
     font-family: Inter;
     font-size: 15px;
@@ -421,27 +373,14 @@ h1{
     border-color: #BB945F;
     transition: 0.5s;
 }
-.favotites__items-item-image{
+.favorites__items-item-image{
     position: absolute;
     z-index: 1;
     left: 390px;
     top: 255px;
 }
-.favotites__items-item:nth-child(5),
-.favotites__items-item:nth-child(6),
-.favotites__items-item:nth-child(7),
-.favotites__items-item:nth-child(8),
-.favotites__items-item:nth-child(9),
-.favotites__items-item:nth-child(10),
-.favotites__items-item:nth-child(11),
-.favotites__items-item:nth-child(12),
-.favotites__items-item:nth-child(13),
-.favotites__items-item:nth-child(14),
-.favotites__items-item:nth-child(15),
-.favotites__items-item:nth-child(16)
-{
-    display: none;
-}
+
+
 .cofee-shop > .section__title{
     margin-top: -20px;
 }
@@ -888,10 +827,10 @@ line-height: 20px;
 /* ----------media querries ----------------------- */
 /* ----------media querries 1280-------------------- */
 @media (max-width: 1280px){
-    .favotites__items{
+    .favorites__items{
         display: block;
     }
-    .favotites__items-item{
+    .favorites__items-item{
         margin: 0 auto 40px;
     }
 }
@@ -995,7 +934,7 @@ line-height: 20px;
 
 /* ----------media querries 725-------------------- */
 @media(max-width:725px){
-    .favorites__radio-buttons :not(:last-child){
+    .favorites__radio-buttons-label:not(:last-of-type){
         margin-right: auto;
     }
 }
