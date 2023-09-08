@@ -44,13 +44,27 @@
 
                     <!-- <div class="title__underline"></div> -->
 
-                    <li class="profile__drop-menu_item"><button class="profile__drop-menu_button">Log In</button></li>
-                    <li class="profile__drop-menu_item"><button class="profile__drop-menu_button">Register</button></li>
+                    <li class="profile__drop-menu_item profile__menu_log-in"><button
+                            class="profile__drop-menu_button">Log In</button></li>
+                    <li class="profile__drop-menu_item profile__menu_register"><button
+                            class="profile__drop-menu_button">Register</button></li>
                 </ul>
             </div>
-
-
-
+            <div class="register__wrapper register__wrapper-none">
+                <div class="register">
+                    <form action="#" class="form" id="form">
+                        Register
+                        <div class="form-group">
+                            <label for="">First name</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group"><label for="">Last name</label></div>
+                        <div class="form-group"><label for="">E-mail</label></div>
+                        <div class="form-group"><label for="">Password</label></div>
+                        <button type="submit" aria-placeholder="Sign Up"></button>
+                    </form>
+                </div>
+            </div>
 
             <button class="burger" aria-expanded="false">
                 <span class="burger__line"></span>
@@ -569,7 +583,6 @@
     <script src="slider-favorites.js"></script>
     <!-- <script src="description.js"></script> -->
     <script src="profile.js"></script>
-
     <script src="index.js"></script>
 </body>
 

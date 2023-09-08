@@ -7,12 +7,6 @@
 html{
     scroll-behavior: smooth; 
 }
-/* .transparent{
-    opacity: 0;
-}
-.opacity{
-    opacity: 1;
-} */
 body{
     background: #c2c2c2;
     text-align: center;
@@ -22,6 +16,15 @@ body{
 .body__wrapper{
     margin: 0 auto;
     height: 100%;
+    max-width: fit-content;
+    /* position: relative; */
+}
+/* .body__wrapper--opacity{
+    background: rgba(0, 0, 0, 0.825);
+    opacity: 0.8;
+} */
+.body__wrapper--locked{
+    overflow:hidden;
 }
 .body--locked {
     overflow-y: hidden;
@@ -60,9 +63,6 @@ h1{
 .profile{
     position: relative;
 }
-.profile::backdrop{
-    background: black;
-}
 .profile__button{
     padding: 0;
     border: none;
@@ -81,7 +81,7 @@ h1{
     padding-bottom: 10px;
     display: none;
 }
-.profile__drop-menu--activ{
+.profile__drop-menu--active{
     display: block;
 }
 
@@ -126,6 +126,47 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px; /* 133.333% */
 margin-bottom: 8px;
+
+}
+.register__wrapper{
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* margin: auto; */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    
+}
+.register__wrapper.register__wrapper-none{
+    display: none;
+}
+.register{
+    box-sizing: border-box;
+        max-width: 250px;
+        width: 100%;
+        max-height: 382px;
+        height: 100%;
+        padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px red;
+    display: none;
+    background: #c29191;
+}
+
+/* .register::backdrop {
+    opacity: 0.9;
+    z-index: 4;
+  } */
+.register--active{
+    display: block;
 }
 .nav__list{
     display: flex;
@@ -857,16 +898,16 @@ line-height: 20px;
     height: 2px;
     background: white;
 }
-.burger--activ .burger__line{
+.burger--active .burger__line{
     opacity: 0;
    
 }
-.burger--activ::before{
+.burger--active::before{
     top:50%;
     transform: rotate(45deg);
     transition: 0.2s ease-in-out;
 }
-.burger--activ::after{
+.burger--active::after{
     top: 50%;
     transform: rotate(-45deg);
     transition: 0.2s ease-in-out;
