@@ -148,17 +148,19 @@ margin-bottom: 8px;
     display: none;
 }
 .register{
+    position: relative;
     box-sizing: border-box;
-        max-width: 250px;
-        width: 100%;
-        max-height: 382px;
-        height: 100%;
-        padding: 20px 25px;
+    max-width: 250px;
+    width: 100%;
+    max-height: 382px;
+    height: 100%;
+    padding: 20px 25px;
     display: flex;
+    align-items: start;
     flex-direction: column;
-    border: solid 2px red;
-    display: none;
-    background: #c29191;
+    /* display: none; */
+    background: #FFF;
+    padding: 0 25px;
 }
 
 /* .register::backdrop {
@@ -166,8 +168,112 @@ margin-bottom: 8px;
     z-index: 4;
   } */
 .register--active{
-    display: block;
+    display: flex;
 }
+.modal__button{
+    box-sizing: border-box;
+    position: absolute;
+    background: transparent;
+    border: none;
+    right: 3%;
+    top: 3%;
+    cursor: pointer;
+}
+.register__title{
+    box-sizing: border-box;
+    margin: 20px 0 20px 0;
+    padding: 0;
+    color: #000;
+text-align: center;
+font-family: Forum;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 100% */
+letter-spacing: 0.4px;
+text-transform: uppercase;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.register__label{
+    text-align: start;
+}
+.register__item-word{
+
+    color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 133.333% */
+letter-spacing: 0.3px;
+}
+/* .register__item:not(:first-of-type){
+    margin-top: 10px;
+    display: block;
+} */
+.register__item-word:not(:last-of-type){
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.register__item-input{
+    box-sizing: border-box;
+    border: none;
+    outline: solid 1px #BB945F;
+    max-width: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.register__sign-up{
+    box-sizing: border-box;
+    background: transparent;
+    margin: 10px 0;
+    border: none;
+    outline: 1px solid #0C0C0E;
+    border-radius: 2px;
+    padding: 9px 16px;
+    max-width: fit-content;
+    color: #0C0C0E;
+    cursor: pointer;
+text-align: center;
+font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1px;
+}
+.register__already{
+    color: #000;
+text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+}
+.register__login{
+    margin-left: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #0C0C0E;
+text-align: center;
+font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1px;
+text-decoration-line: underline;
+}
+    
 .nav__list{
     display: flex;
     font-family: 'Inter';

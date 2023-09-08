@@ -1,11 +1,11 @@
 const profileIcon = document.querySelector(".profile__icon")
 const profileMenu = document.querySelector(".profile__drop-menu")
 const bodyWrapper = document.querySelector(".body__wrapper")
-// const profileButton = document.querySelector(".profile__drop-menu_button")
 const profileReg = document.querySelector(".profile__menu_register")
 const register = document.querySelector(".register")
-// const registerActive = document.querySelector(".register--active")
 const regWrapper = document.querySelector(".register__wrapper");
+const registerCloseButton = document.querySelector(".modal__button")
+const registerLogin = document.querySelector(".register__login")
 
 function showMenu() {
     // при нажатии на иконку открывается дроп-меню
@@ -34,17 +34,15 @@ function showMenu() {
         // при нажатии на область вне окна регистрации, оно скрывается
         if (!profileReg.contains(event.target) && !register.contains(event.target)) {
             register.classList.remove('register--active')
-            // bodyWrapper.classList.remove('body__wrapper--opacity')
             regWrapper.classList.add('register__wrapper-none')
-            // body.classList.remove('body__wrapper--locked')
             // console.log(event.target)
         }
         // при открытом окне регистрации
         if (register.classList.contains('register--active')) {
-            // bodyWrapper.classList.add('body__wrapper--opacity')
             regWrapper.classList.remove('register__wrapper-none')
-            console.log('menu opened');
+            // console.log('menu opened');
         }
+        // срытие окна регистрации и затемнения при нажатии на кнопку 'Escape'
         body.addEventListener('keydown', function (event) {
             if (event.key == "Escape") {
                 register.classList.remove('register--active')
@@ -52,10 +50,16 @@ function showMenu() {
 
             }
         })
+        // скрытие окна регистрации при нажатии на крестик и на кнопку login
+        registerCloseButton.addEventListener('click', close)
+        registerLogin.addEventListener('click', close)
 
     })
 
 }
 showMenu()
 
-
+function close(event) {
+    register.classList.remove('register--active')
+    regWrapper.classList.add('register__wrapper-none')
+}

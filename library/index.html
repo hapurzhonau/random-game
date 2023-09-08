@@ -52,17 +52,35 @@
             </div>
             <div class="register__wrapper register__wrapper-none">
                 <div class="register">
+                    <button class="modal__button modal__button_close"><img src="icons/close_btn.svg" alt=""></button>
                     <form action="#" class="form" id="form">
-                        Register
-                        <div class="form-group">
-                            <label for="">First name</label>
-                            <input type="text">
-                        </div>
-                        <div class="form-group"><label for="">Last name</label></div>
-                        <div class="form-group"><label for="">E-mail</label></div>
-                        <div class="form-group"><label for="">Password</label></div>
-                        <button type="submit" aria-placeholder="Sign Up"></button>
+                        <h3 class="register__title">Register</h3>
+
+                        <label class="register__label">
+                            <span class="register__item-word register__first-name">First name</span>
+                            <input class="register__item-input" type="text">
+                            <span class="register__wrong-first-name"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__last-name">Last name</span>
+                            <input class="register__item-input" type="text">
+                            <span class="register__wrong-last-name"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__email">E-mail</span>
+                            <input class="register__item-input" type="email">
+                            <span class="register__wrong-email"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__password">Password</span>
+                            <input class="register__item-input" type="password">
+                            <span class="register__wrong-password"></span>
+                        </label>
+                        <button class="register__sign-up" type="submit">Sign up</button>
                     </form>
+                    <span class="register__already">Already have an account?<button
+                            class="register__login">Login</button></span>
+
                 </div>
             </div>
 
