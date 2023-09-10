@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BPL</title>
+    <link rel="stylesheet" href="cdn.jsdelivr.net_npm_swiper@10_swiper-bundle.min.css">
+    <link rel="stylesheet" href="swiper.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
 </head>
 
 <body>
     <div class="body__wrapper">
         <header class="header">
-
-            <!-- <div class="header-inner"> -->
 
             <h1>Brooklyn Public Library</h1>
 
@@ -33,22 +33,91 @@
                 </ul>
             </nav>
 
-            <img class="icon" src="icons/icon_profile.svg" alt="icon_profile">
+
+            <div class="profile">
+                <button class="profile__button"><img class="profile__icon" src="icons/icon_profile.svg"
+                        alt="icon_profile"></button>
+                <ul class="profile__drop-menu">
+                    <li class="profile_word">Profile</li>
+
+                    <!-- <div class="title__underline"></div> -->
+
+                    <li class="profile__drop-menu_item profile__menu_log-in"><button
+                            class="profile__drop-menu_button">Log In</button></li>
+                    <li class="profile__drop-menu_item profile__menu_register"><button
+                            class="profile__drop-menu_button">Register</button></li>
+                </ul>
+            </div>
+
+
+            <div class="register__wrapper register__wrapper-none">
+                <div class="register">
+                    <button class="modal__button modal__button_close"><img src="icons/close_btn.svg" alt=""></button>
+                    <form action="#" class="form" id="form">
+                        <h3 class="register__title">Register</h3>
+
+                        <label class="register__label">
+                            <span class="register__item-word register__first-name">First name</span>
+                            <input class="register__item-input" type="text">
+                            <span class="register__wrong-first-name"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__last-name">Last name</span>
+                            <input class="register__item-input" type="text">
+                            <span class="register__wrong-last-name"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__email">E-mail</span>
+                            <input class="register__item-input" type="email">
+                            <span class="register__wrong-email"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__password">Password</span>
+                            <input class="register__item-input" type="password">
+                            <span class="register__wrong-password"></span>
+                        </label>
+                        <button class="register__sign-up" type="submit">Sign up</button>
+                    </form>
+                    <span class="register__already">Already have an account?<button
+                            class="register__login-word">Login</button></span>
+                </div>
+            </div>
+
+
+            <div class="login__wrapper login__wrapper-none">
+                <div class="login">
+                    <button class="modal__button modal__button_close"><img src="icons/close_btn.svg" alt=""></button>
+                    <form action="#" class="form" id="form">
+                        <h3 class="login__title">Login</h3>
+                        <label class="register__label">
+                            <span class="register__item-word register__email">E-mail or readers card</span>
+                            <input class="register__item-input" type="email">
+                            <span class="register__wrong-email"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__password">Password</span>
+                            <input class="register__item-input" type="password">
+                            <span class="register__wrong-password"></span>
+                        </label>
+                        <button class="register__sign-up" type="submit">Log in</button>
+                    </form>
+                    <span class="register__already">Don't have an account?<button
+                            class="register__register-word">Register</button></span>
+
+                </div>
+
+            </div>
             <button class="burger" aria-expanded="false">
                 <span class="burger__line"></span>
             </button>
 
-            <!-- </div> -->
-
         </header>
         <main class="main">
             <section class="welcome">
-                <!-- <div class="welcome__inner"> -->
                 <div class="welcome__inner-rectangle">
                     <h2 class="welcome__inner-rectangle-text">Welcome<br>
                         to the Brooklyn Library</h2>
                 </div>
-                <!-- </div> -->
             </section>
             <section class="about" id="about">
 
@@ -61,43 +130,32 @@
                     cozy
                     coffee
                     shop inside </div>
-                <!-- <button></button> -->
-                <div class="about__images">
 
-                    <img class="about__images-item" src="images/girl.jpg" alt="girl-in-library" title="girl-in-library">
-                    <img class="about__images-item" src="images/busts.jpg" alt="busts" title="busts">
-                    <img class="about__images-item" src="images/books.jpg" alt="books" title="books">
-                    <img class="about__images-item" src="images/ladder.jpg" alt="ladder" title="ladder">
-                    <img class="about__images-item" src="images/columns.jpg" alt="columns" title="columns">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img class="about__images-item" src="images/girl.jpg"
+                                alt="girl-in-library"></div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/busts.jpg" alt="busts">
+                        </div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/books.jpg" alt="books">
+                        </div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/ladder.jpg" alt="ladder">
+                        </div>
+                        <div class="swiper-slide"><img class="about__images-item" src="images/columns.jpg"
+                                alt="columns"></div>
 
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
 
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <!-- <button></button> -->
-                <div class="pagination-wrapper">
-                    <div class="pagination-wrapper__first-button"></div>
-                    <div class="pagination-wrapper__second-button"></div>
-                    <div class="pagination-wrapper__third-button"></div>
-                    <div class="pagination-wrapper__fourth-button"></div>
-                    <div class="pagination-wrapper__fifth-button"></div>
 
-                </div>
-                <!-- 
-                <div class="pagination-wrapper">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="16" viewBox="0 0 68 16" fill="none"
-                        class="paginaton">
-                        <a href="#" class="pagination__text">
-                            <rect width="16" height="16" rx="8" fill="#BB945F" />
-                        </a>
-                        <a href="#" class="pagination__text">
-                            <rect x="26" width="16" height="16" rx="8" fill="#0C0C0E" />
-                        </a>
-                        <a href="#" class="pagination__text">
-                            <rect x="52" width="16" height="16" rx="8" fill="#0C0C0E" />
-                        </a>
-                    </svg>
-
-                </div> -->
             </section>
             <section class="favorites" id="favorites">
 
@@ -106,28 +164,28 @@
                 <p class="favorites__text">Pick favorites of season</p>
 
                 <div class="favorites__radio-buttons">
-                    <label class="favorites__radio-buttons-label">
-                        <input class="favorites__real-button" type="radio" name="season" checked>
+                    <label class="favorites__radio-buttons-label bold" for="winter">
+                        <input class="favorites__real-button winter" type="radio" name="name" id="winter" checked>
                         <span class="favorites__fake-button"></span>
                         Winter</label>
-                    <label class="favorites__radio-buttons-label">
-                        <input class="favorites__real-button" type="radio" name="season">
+                    <label class="favorites__radio-buttons-label" for="spring">
+                        <input class="favorites__real-button spring" type="radio" name="name" id="spring">
                         <span class="favorites__fake-button"></span>
                         Spring</label>
-                    <label class="favorites__radio-buttons-label">
-                        <input class="favorites__real-button" type="radio" name="season">
+                    <label class="favorites__radio-buttons-label" for="summer">
+                        <input class="favorites__real-button summer" type="radio" name="name" id="summer">
                         <span class="favorites__fake-button"></span>
                         Summer</label>
-                    <label class="favorites__radio-buttons-label">
-                        <input class="favorites__real-button" type="radio" name="season">
+                    <label class="favorites__radio-buttons-label" for="autumn">
+                        <input class="favorites__real-button autumn" type="radio" name="name" id="autumn">
                         <span class="favorites__fake-button"></span>
                         Autumn</label>
                 </div>
-                <div class="favotites__items">
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                <div class="favorites__items">
+                    <div class="favorites__items-item" data-season="winter">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE BOOK EATERS<br>
+                        <p class="favorites__items-book-title">THE BOOK EATERS<br>
                             By Sunyi Dean</p>
                         <div class="favorites__items-descrition">An unusual sci-fi story about a book eater woman who
                             tries
@@ -138,26 +196,26 @@
                             the faint of heart.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book1.png" alt="The Book Eaters">
+                        <div class="favorites__items-item-image"><img src="images/book1.png" alt="The Book Eaters">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="winter">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">CACKLE<br>
+                        <p class="favorites__items-book-title">CACKLE<br>
                             By Rachel Harrison</p>
                         <div class="favorites__items-descrition">Are your Halloween movies of choice The Witches of
                             Eastwick and Practical Magic? Look no further than here - where a woman recovering from a
                             breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book2.png" alt="CACKLE">
+                        <div class="favorites__items-item-image"><img src="images/book2.png" alt="CACKLE">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="winter">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">DANTE: POET OF THE SECULAR WORLD<br>
+                        <p class="favorites__items-book-title">DANTE: POET OF THE SECULAR WORLD<br>
                             By Erich Auerbach</p>
                         <div class="favorites__items-descrition">Auerbach's engaging book places the 'Comedy' within the
                             tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one
@@ -165,181 +223,187 @@
                             inspired introduction to Dante's main themes.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book3.png"
+                        <div class="favorites__items-item-image"><img src="images/book3.png"
                                 alt="DANTE: POET OF THE SECULAR WORLD">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="winter">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
+                        <p class="favorites__items-book-title">THE LAST QUEEN<br>
                             By Clive Irving</p>
                         <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
                             Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
                             world has changed around them.
                         </div>
                         <button class="favorites__items-button-own">Own</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="spring">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">THE BODY<br>
+                            By Stephen King</p>
+                        <div class="favorites__items-descrition">Powerful novel that takes you back to a nostalgic time,
+                            exploring both the beauty and danger and loss of innocence that is youth.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book5.png" alt="the body">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="spring">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">CARRY: A MEMOIR OF SURVIVAL ON STOLEN LAND<br>
+                            By Toni Jenson</p>
+                        <div class="favorites__items-descrition">This memoir about the author's relationship with gun
+                            violence feels both expansive and intimate, resulting in a lyrical indictment of the way
+                            things are.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book6.png" alt="Survival on Stolen">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="spring">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">DAYS OF DISTRACTION<br>
+                            By Alexandra Chang</p>
+                        <div class="favorites__items-descrition">A sardonic view of Silicon Valley culture, a meditation
+                            on race, and a journal of displacement and belonging, all in one form-defying package of
+                            spare prose.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book7.png" alt="Days of Distraction">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="spring">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">DOMINICANA<br>
+                            By Angie Cruz</p>
+                        <div class="favorites__items-descrition">A fascinating story of a teenage girl who marries a man
+                            twice her age with the promise to bring her to America. Her marriage is an opportunity for
+                            her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book8.png" alt="DOMINICANA">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="summer">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">CRUDE: A MEMOIR<br>
+                            By Pablo Fajardo & ​​Sophie Tardy-Joubert</p>
+                        <div class="favorites__items-descrition">Drawing and color by Damien Roudeau | This book
+                            illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the
+                            ChevronTexaco company for damage their oil fields did to the Amazon and her people
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book9.png" alt="CRUDE: A MEMOIR">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="summer">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">LET MY PEOPLE GO SURFING<br>
+                            By Yvon Chouinard</p>
+                        <div class="favorites__items-descrition">Chouinard—climber, businessman, environmentalist—shares
+                            tales of courage and persistence from his experience of founding and leading Patagonia, Inc.
+                            Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10
+                            More Years of Business Unusual.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book10.png"
+                                alt="LET MY PEOPLE GO SURFING">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="summer">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">THE OCTOPUS MUSEUM: POEMS<br>
+                            By Brenda Shaughnessy</p>
+                        <div class="favorites__items-descrition">This collection of bold and scathingly beautiful
+                            feminist poems imagines what comes after our current age of environmental destruction,
+                            racism, sexism, and divisive politics.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book11.png"
+                                alt="THE OCTOPUS MUSEUM: POEMS">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="summer">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">SHARK DIALOGUES: A NOVEL<br>
+                            By Kiana Davenport</p>
+                        <div class="favorites__items-descrition">An epic saga of seven generations of one family
+                            encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four
+                            granddaughters together in an erotic tale of villains and dreamers, queens and
+                            revolutionaries, lepers and healers.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book12.png"
+                                alt="SHARK DIALOGUES: A NOVEL">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="autumn">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">CASUAL CONVERSATION<br>
+                            By Renia White</p>
+                        <div class="favorites__items-descrition">White's impressive debut collection takes readers
+                            through and beyond the concepts of conversation and the casual - both what we say to each
+                            other and what we don't, examining the possibilities around how we construct and communicate
+                            identity.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book13.png" alt="CASUAL CONVERSATION">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="autumn">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">THE GREAT FIRE<br>
+                            By Lou Ureneck</p>
+                        <div class="favorites__items-descrition">The harrowing story of an ordinary American and a
+                            principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary
+                            rescue effort that saved a quarter of a million refugees from the Armenian Genocide
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book14.png" alt="THE GREAT FIRE">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="autumn">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">RICKEY: THE LIFE AND LEGEND<br>
+                            By Howard Bryant</p>
+                        <div class="favorites__items-descrition">With the fall rolling around, one can't help but think
+                            of baseball's postseason coming up! And what better way to prepare for it than reading the
+                            biography of one of the game's all-time greatest performers, the Man of Steal, Rickey
+                            Henderson?
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book15.png"
+                                alt="RICKEY: THE LIFE AND LEGEND">
                         </div>
                     </div>
-                    <div class="favotites__items-item">
-                        <p class="favotites__items-staff">Staff Picks</p>
+                    <div class="favorites__items-item" data-season="autumn">
+                        <p class="favorites__items-staff">Staff Picks</p>
                         <div class="favorites__items-underline"></div>
-                        <p class="favotites__items-book-title">THE LAST QUEEN<br>
-                            By Clive Irving</p>
-                        <div class="favorites__items-descrition">A timely and revelatory new biography of Queen
-                            Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
-                            world has changed around them.
+                        <p class="favorites__items-book-title">SLUG: AND OTHER STORIES<br>
+                            By Megan Milks</p>
+                        <div class="favorites__items-descrition">Exes Tegan and Sara find themselves chained together by
+                            hairballs of codependency. A father and child experience the shared trauma of giving birth
+                            to gods from their wounds.
                         </div>
                         <button class="favorites__items-button">Buy</button>
-                        <div class="favotites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
+                        <div class="favorites__items-item-image"><img src="images/book16.png"
+                                alt="SLUG: AND OTHER STORIES">
                         </div>
                     </div>
-
-
                 </div>
             </section>
             <section class="cofee-shop" id="cofee-shop">
@@ -555,6 +619,11 @@
             </div>
         </footer>
     </div>
+    <script src="cdn.jsdelivr.net_npm_swiper@10_swiper-bundle.min.js"></script>
+    <script src="swiper.js"></script>
+    <script src="slider-favorites.js"></script>
+    <!-- <script src="description.js"></script> -->
+    <script src="profile.js"></script>
     <script src="index.js"></script>
 </body>
 
