@@ -3,10 +3,10 @@ const profileMenu = document.querySelector(".profile__drop-menu")
 const bodyWrapper = document.querySelector(".body__wrapper")
 const profileReg = document.querySelector(".profile__menu_register")
 const register = document.querySelector(".register")
-const regWrapper = document.querySelector(".register__wrapper");
+const registerWrapper = document.querySelector(".register__wrapper");
 const registerCloseButton = document.querySelector(".modal__button")
-const registerLogin = document.querySelector(".register__login")
-
+const registerLogin = document.querySelector(".register__login-word")
+const loginWrapper = document.querySelector(".login__wrapper")
 function showMenu() {
     // при нажатии на иконку открывается дроп-меню
     profileIcon.addEventListener('click', function (event) {
@@ -20,7 +20,7 @@ function showMenu() {
             profileMenu.classList.toggle('profile__drop-menu--active')
         }
     })
-    // открытие окно регистрации
+    // открытие окна регистрации
     profileReg.addEventListener('click', function (e) {
         register.classList.add('register--active')
 
@@ -33,33 +33,35 @@ function showMenu() {
         }
         // при нажатии на область вне окна регистрации, оно скрывается
         if (!profileReg.contains(event.target) && !register.contains(event.target)) {
-            register.classList.remove('register--active')
-            regWrapper.classList.add('register__wrapper-none')
+            close()
             // console.log(event.target)
         }
-        // при открытом окне регистрации
+        // при открытом окне регистрации происходит затемнение (remove незатемнение)
         if (register.classList.contains('register--active')) {
-            regWrapper.classList.remove('register__wrapper-none')
-            // console.log('menu opened');
+            registerWrapper.classList.remove('register__wrapper-none')
+
         }
         // срытие окна регистрации и затемнения при нажатии на кнопку 'Escape'
         body.addEventListener('keydown', function (event) {
             if (event.key == "Escape") {
-                register.classList.remove('register--active')
-                regWrapper.classList.add('register__wrapper-none')
+                close()
 
             }
         })
-        // скрытие окна регистрации при нажатии на крестик и на кнопку login
+        // скрытие окна register при нажатии на крестик и на кнопку login
+        //  и открытие окна login при нажатии на login
         registerCloseButton.addEventListener('click', close)
         registerLogin.addEventListener('click', close)
+        registerLogin.addEventListener('click', function () {
+            loginWrapper.classList.remove('login__wrapper-none')
+        })
 
     })
 
 }
 showMenu()
-
-function close(event) {
+// функция закрытия окна регистрации и затемнения
+function close() {
     register.classList.remove('register--active')
-    regWrapper.classList.add('register__wrapper-none')
+    registerWrapper.classList.add('register__wrapper-none')
 }

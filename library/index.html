@@ -34,13 +34,11 @@
             </nav>
 
 
-
-
             <div class="profile">
                 <button class="profile__button"><img class="profile__icon" src="icons/icon_profile.svg"
                         alt="icon_profile"></button>
                 <ul class="profile__drop-menu">
-                    <strong class="profile_word">Profile</strong>
+                    <li class="profile_word">Profile</li>
 
                     <!-- <div class="title__underline"></div> -->
 
@@ -50,6 +48,8 @@
                             class="profile__drop-menu_button">Register</button></li>
                 </ul>
             </div>
+
+
             <div class="register__wrapper register__wrapper-none">
                 <div class="register">
                     <button class="modal__button modal__button_close"><img src="icons/close_btn.svg" alt=""></button>
@@ -79,11 +79,34 @@
                         <button class="register__sign-up" type="submit">Sign up</button>
                     </form>
                     <span class="register__already">Already have an account?<button
-                            class="register__login">Login</button></span>
-
+                            class="register__login-word">Login</button></span>
                 </div>
             </div>
 
+
+            <div class="login__wrapper login__wrapper-none">
+                <div class="login">
+                    <button class="modal__button modal__button_close"><img src="icons/close_btn.svg" alt=""></button>
+                    <form action="#" class="form" id="form">
+                        <h3 class="login__title">Login</h3>
+                        <label class="register__label">
+                            <span class="register__item-word register__email">E-mail or readers card</span>
+                            <input class="register__item-input" type="email">
+                            <span class="register__wrong-email"></span>
+                        </label>
+                        <label class="register__label">
+                            <span class="register__item-word register__password">Password</span>
+                            <input class="register__item-input" type="password">
+                            <span class="register__wrong-password"></span>
+                        </label>
+                        <button class="register__sign-up" type="submit">Log in</button>
+                    </form>
+                    <span class="register__already">Don't have an account?<button
+                            class="register__register-word">Register</button></span>
+
+                </div>
+
+            </div>
             <button class="burger" aria-expanded="false">
                 <span class="burger__line"></span>
             </button>

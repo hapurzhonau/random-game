@@ -158,15 +158,9 @@ margin-bottom: 8px;
     display: flex;
     align-items: start;
     flex-direction: column;
-    /* display: none; */
     background: #FFF;
     padding: 0 25px;
 }
-
-/* .register::backdrop {
-    opacity: 0.9;
-    z-index: 4;
-  } */
 .register--active{
     display: flex;
 }
@@ -258,7 +252,7 @@ font-weight: 400;
 line-height: normal;
 
 }
-.register__login{
+.register__login-word{
     margin-left: 5px;
     border: none;
     background: transparent;
@@ -273,7 +267,55 @@ line-height: normal;
 letter-spacing: 1px;
 text-decoration-line: underline;
 }
-    
+
+
+.login__wrapper{
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* margin: auto; */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    /* display: none; */
+}
+.login__wrapper.login__wrapper-none{
+    display: none;
+}
+.login{
+     position: relative;
+    z-index: 100;
+    box-sizing: border-box;
+    max-width: 250px;
+    width: 100%;
+    max-height: 262px;
+    height: 100%;
+    padding: 20px 25px;
+    align-items: start;
+    flex-direction: column;
+    background: #FFF;
+    display: flex;
+}
+.login__title{
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: #000;
+text-align: center;
+font-family: Forum;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 100% */
+letter-spacing: 0.4px;
+text-transform: uppercase;
+}
 .nav__list{
     display: flex;
     font-family: 'Inter';
