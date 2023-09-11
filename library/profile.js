@@ -1,12 +1,15 @@
 const profileIcon = document.querySelector(".profile__icon")
 const profileMenu = document.querySelector(".profile__drop-menu")
 const bodyWrapper = document.querySelector(".body__wrapper")
-const profileReg = document.querySelector(".profile__menu_register")
-const register = document.querySelector(".register")
-const registerWrapper = document.querySelector(".register__wrapper");
-const registerCloseButton = document.querySelector(".modal__button")
-const registerLogin = document.querySelector(".register__login-word")
+const profileReg = profileMenu.querySelector(".profile__menu_register")
+const profileLogin = profileMenu.querySelector(".profile__menu_log-in")
 const loginWrapper = document.querySelector(".login__wrapper")
+const login = loginWrapper.querySelector(".login")
+const registerWrapper = document.querySelector(".register__wrapper");
+const register = registerWrapper.querySelector(".register")
+const registerCloseButton = document.querySelector(".modal__button")
+const registerLogin = register.querySelector(".register__login-word")
+
 function showMenu() {
     // при нажатии на иконку открывается дроп-меню
     profileIcon.addEventListener('click', function (event) {
@@ -21,47 +24,60 @@ function showMenu() {
         }
     })
     // открытие окна регистрации
-    profileReg.addEventListener('click', function (e) {
-        register.classList.add('register--active')
+    profileReg.addEventListener('click', function () {
+        registerWrapper.classList.remove('register__wrapper-none')
 
     })
 
+    profileLogin.addEventListener('click', function (event) {
+        loginWrapper.classList.remove('login__wrapper-none')
+
+    })
+
+
+
     bodyWrapper.addEventListener('click', (event) => {
         // при нажатии на область вне дроп-меню, оно скрывается
-        if (!profileIcon.contains(event.target) && !profileMenu.contains(event.target)) {
+        if (!profileMenu.contains(event.target)) {
             profileMenu.classList.remove('profile__drop-menu--active');
         }
-        // при нажатии на область вне окна регистрации, оно скрывается
-        if (!profileReg.contains(event.target) && !register.contains(event.target)) {
-            close()
-            // console.log(event.target)
-        }
-        // при открытом окне регистрации происходит затемнение (remove незатемнение)
-        if (register.classList.contains('register--active')) {
-            registerWrapper.classList.remove('register__wrapper-none')
 
-        }
         // срытие окна регистрации и затемнения при нажатии на кнопку 'Escape'
         body.addEventListener('keydown', function (event) {
             if (event.key == "Escape") {
                 close()
-
             }
         })
-        // скрытие окна register при нажатии на крестик и на кнопку login
-        //  и открытие окна login при нажатии на login
-        registerCloseButton.addEventListener('click', close)
-        registerLogin.addEventListener('click', close)
-        registerLogin.addEventListener('click', function () {
-            loginWrapper.classList.remove('login__wrapper-none')
-        })
 
+        // скрытие окна register при нажатии на крестик
+        registerCloseButton.addEventListener('click', close)
     })
 
+
+    loginWrapper.addEventListener('click', function (event) {
+        if (!login.contains(event.target)) {
+            loginWrapper.classList.add('login__wrapper-none')
+        }
+    })
+
+    // при нажатии на кнопку login в окне РЕГИСТРАЦИИ закрывается это окно и открывается окно ЛОГИНАЦИИ
+    registerLogin.addEventListener('click', function (event) {
+        loginWrapper.classList.remove('login__wrapper-none')
+        event.stopPropagation()
+        close()
+    })
+
+    // закрытие окна регистрации при нажатии вне её области
+    registerWrapper.addEventListener('click', function (event) {
+        if (!register.contains(event.target)) {
+            close()
+        }
+    })
 }
+
+
 showMenu()
 // функция закрытия окна регистрации и затемнения
 function close() {
-    register.classList.remove('register--active')
     registerWrapper.classList.add('register__wrapper-none')
 }
