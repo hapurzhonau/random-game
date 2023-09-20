@@ -11,6 +11,10 @@ const registerCloseButton = document.querySelector(".modal__button")
 const loginCloseButton = login.querySelector(".modal__button_close-login")
 const registerLogin = register.querySelector(".register__login-word")
 const loginRegisterWord = login.querySelector(".login__register-word")
+const cardsButtonLogin = document.querySelector(".cards__button_login")
+const cardsButtonSign = document.querySelector(".cards__button_sign")
+const favotitesBuyButton = document.querySelectorAll(".favorites__items-button")
+
 function showMenu() {
 
     // при нажатии на иконку открывается дроп-меню
@@ -34,19 +38,29 @@ function showMenu() {
         loginOpen()
     })
 
+    // кнопки Buy в секции Favorites открывают меню ЛОГИНАЦИИ
+    favotitesBuyButton.forEach(function (el) {
+        el.addEventListener('click', loginOpen)
+    })
 
+    // кнопка Login в секции Cards открывает окно ЛОГИНАЦИИ
+    cardsButtonLogin.addEventListener('click', loginOpen)
+
+    // кнопка Sign-up в секции Cards открывает меню РЕГИСТРАЦИИ
+    cardsButtonSign.addEventListener('click', registerOpen)
 
     bodyWrapper.addEventListener('click', (event) => {
         // при нажатии на область вне дроп-меню, оно скрывается
-        // (не совсем понимаю, при чем здесь проверка кнопки открытия)
+        // (не совсем понимаю, при чем здесь проверка кнопки открытия(toggle срабатывает выше изначально, но всё же))
         if (!profileIcon.contains(event.target) && !profileMenu.contains(event.target)) {
             profileMenu.classList.remove('profile__drop-menu--active');
         }
 
-        // срытие окна регистрации и затемнения при нажатии на кнопку 'Escape'
+        // СКРЫТИЕ окон РЕГИСТРАЦИИ и ЛОГИНАЦИИ при нажатии на кнопку 'Escape'
         body.addEventListener('keydown', function (event) {
             if (event.key == "Escape") {
                 registerClose()
+                loginClose()
             }
         })
 
@@ -85,19 +99,22 @@ function showMenu() {
     })
 
 }
-
-
 showMenu()
-// функция закрытия окна регистрации и затемнения
+
+
+// функция ЗАКРЫТИЯ затемненного враппера с окном РЕГИСТАРЦИИ внутри
 function registerClose() {
     registerWrapper.classList.add('register__wrapper-none')
 }
+// функция ОТКРЫТИЯ затемненного враппера с окном РЕГИСТАРЦИИ внутри
 function registerOpen() {
     registerWrapper.classList.remove('register__wrapper-none')
 }
+// функция ЗАКРЫТИЯ затемненного враппера с окном ЛОГИНАЦИИ внутри
 function loginClose() {
     loginWrapper.classList.add('login__wrapper-none')
 }
+// функция ОТКРЫТИЯ затемненного враппера с окном ЛОГИНАЦИИ внутри
 function loginOpen() {
     loginWrapper.classList.remove('login__wrapper-none')
 }
