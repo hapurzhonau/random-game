@@ -58,22 +58,22 @@
 
                         <label class="register__label">
                             <span class="register__item-word register__first-name">First name</span>
-                            <input class="register__item-input" type="text">
+                            <input class="register__item-input register__input_first-name" type="text">
                             <span class="register__wrong-first-name"></span>
                         </label>
                         <label class="register__label">
                             <span class="register__item-word register__last-name">Last name</span>
-                            <input class="register__item-input" type="text">
+                            <input class="register__item-input register__input_last-name" type="text">
                             <span class="register__wrong-last-name"></span>
                         </label>
                         <label class="register__label">
                             <span class="register__item-word register__email">E-mail</span>
-                            <input class="register__item-input" type="email">
+                            <input class="register__item-input register__input_email" type="email">
                             <span class="register__wrong-email"></span>
                         </label>
                         <label class="register__label">
                             <span class="register__item-word register__password">Password</span>
-                            <input class="register__item-input" type="password">
+                            <input class="register__item-input register__input_password" type="password">
                             <span class="register__wrong-password"></span>
                         </label>
                         <button class="register__sign-up" type="submit">Sign up</button>
@@ -88,7 +88,7 @@
                 <div class="login">
                     <button class="modal__button modal__button_close-login"><img src="icons/close_btn.svg"
                             alt=""></button>
-                    <form action="#" class="form" id="login-form">
+                    <form action="" class="form login-form" id="login-form">
                         <h3 class="login__title">Login</h3>
                         <label class="register__label">
                             <span class="register__item-word register__email">E-mail or readers card</span>
@@ -100,7 +100,7 @@
                             <input class="register__item-input" type="password">
                             <span class="register__wrong-password"></span>
                         </label>
-                        <button class="register__sign-up" type="submit">Log in</button>
+                        <button class="login__button-login" type="submit">Log in</button>
                     </form>
                     <span class="register__already">Don't have an account?<button
                             class="login__register-word">Register</button></span>
@@ -237,7 +237,7 @@
                             Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern
                             world has changed around them.
                         </div>
-                        <button class="favorites__items-button-own">Own</button>
+                        <button class="favorites__items-button">Own</button>
                         <div class="favorites__items-item-image"><img src="images/book4.png" alt="THE LAST QUEEN">
                         </div>
                     </div>
@@ -577,8 +577,8 @@
                             you can register a new
                             account</p>
                         <div class="cards-get__buttons">
-                            <button class="sign-button">Sign Up</button>
-                            <button class="sign-button">Log in</button>
+                            <button class="sign-button cards__button_sign">Sign Up</button>
+                            <button class="sign-button cards__button_login">Log in</button>
                         </div>
                     </div>
 
@@ -625,6 +625,7 @@
     <script src="slider-favorites.js"></script>
     <!-- <script src="description.js"></script> -->
     <script src="profile.js"></script>
+    <script src="register.js" defer></script>
     <script src="index.js"></script>
 </body>
 
