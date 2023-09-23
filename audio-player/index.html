@@ -4,11 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>audio-player</title>
+    <title>music-player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons/favicon.svg">
 </head>
 
 <body>
+    <main>
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="buttons">
 
+                    <div><img src="icons/Rewind.svg" alt="rewind"></div>
+                    <div><img class="play play-pause" src="icons/Play.svg" alt="play/pause"></div>
+                    <div class="forward"><img src="icons/Fast Fwd.svg" alt="forward"></div>
+
+                </div>
+
+            </div>
+            <input class="range" type="range" value="0">
+        </div>
+        <audio src="audio/James Brown - It's A Man's Man's Man's World.mp3"></audio>
+    </main>
 </body>
+<script src="index.js"></script>
 
 </html>
