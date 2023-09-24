@@ -1,12 +1,12 @@
 const audio = document.querySelector('audio');
 const play = document.querySelector(".play");
 const pause = document.querySelector(".pause");
-// const buttons = document.querySelectorAll(".buttons")
 const container = document.querySelector(".container")
 const musicName = document.querySelector(".music-name")
 const trecksNamesArr = ["Queen - The Show Must Go On", "Scorpions - Still Loving You", "Scorpions - Wind Of Change"]
 const backward = document.querySelector(".backward")
 const forward = document.querySelector(".forward")
+const progressLine = document.querySelector(".progress-line")
 
 // function play
 function playAudio() {
@@ -32,15 +32,16 @@ play.addEventListener('click', function () {
         playAudio()
     }
 })
-
+// what should happen when the nowPlaying() activates
 let ind = 0;
 function nowPlaying(treck) {
-    musicName.innerHTML = treck;
-    audio.src = `audio/${treck}.mp3`
+    musicName.innerHTML = treck; // change music-name
+    audio.src = `audio/${treck}.mp3` // change music path
+
 }
 nowPlaying(trecksNamesArr[ind])
 
-
+// if forward has clicked next treck (trecksNamesArr[ind]) playing (playAudio())
 forward.addEventListener('click', function () {
     ind += 1;
     if (ind > trecksNamesArr.length - 1) {
@@ -49,6 +50,7 @@ forward.addEventListener('click', function () {
     nowPlaying(trecksNamesArr[ind])
     playAudio()
 })
+// if backward has clicked previous treck (trecksNamesArr[ind]) playing (playAudio())
 backward.addEventListener('click', function () {
     ind -= 1;
     if (ind < 0) {
@@ -56,4 +58,17 @@ backward.addEventListener('click', function () {
     }
     nowPlaying(trecksNamesArr[ind])
     playAudio()
+})
+progressLine.style.width = 0;
+audio.addEventListener('durationchange', function () {
+    console.log('duration changed')
+    audio.addEventListener('timeupdate', function (event) {
+        console.log(event.target.duration)
+        console.log(event.target.currentTime);
+
+        progressLine.style.width = (event.target.currentTime * 100 / event.target.duration) + '%';
+    })
+})
+audio.addEventListener('loadedmetadata', function (event) {
+    console.log('meta loaded');
 })

@@ -35,7 +35,7 @@ main {
 .container {
   padding: 10px;
   /* margin: 0 30px; */
-  background: #545460;
+  background: #2a2a33;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -49,17 +49,15 @@ main {
   /* min-width: 10px; */
 }
 .music-name {
-  margin-top: 10%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 90%;
+  max-height: 25px;
 }
-/* .now-playing {
-  color: #a9a9a9;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  min-width: 100%;
-  text-align: center;
-} */
+
 .buttons {
-  margin-top: 10%;
+  margin-top: 40px;
+  margin-bottom: 20px;
   /* width: 100%; */
   display: flex;
   align-items: center;
@@ -78,28 +76,36 @@ img {
   cursor: pointer;
   /* margin: 10px; */
 }
+img:active {
+  transform: scale(0.9);
+  /* transition: transform 0.2s ease-in-out; */
+}
 .progress-wrapper {
   max-width: 100%;
   width: 90%;
   background: #fff;
-  margin: 10%;
+  margin: 20px 0 40px 0;
   border-radius: 10px;
   cursor: pointer;
 }
 .progress-line {
   max-width: 100%;
-  width: 40%;
-  background: rgb(124, 123, 142, 0.6);
-  height: 5px;
-  border-radius: 10px;
+  /* width: 40%; */
+  background: rgb(124, 123, 142, 0.7);
+  /* background-color: red; */
+  height: 4px;
+  border-radius: 10px 0 0 10px;
 }
 footer {
+  max-width: 1080px;
   display: flex;
   justify-content: space-around;
-  background: #545460;
+  background: #2a2a33;
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding: 0.5%;
+  align-items: center;
 }
 .rss-logo {
   max-width: 50px;
