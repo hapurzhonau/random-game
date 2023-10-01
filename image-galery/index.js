@@ -7,11 +7,16 @@ const form = document.querySelector(".form")
 const input = document.querySelector(".search__input")
 const imageWrapper = document.querySelector(".image__wrapper");
 const image = document.querySelector(".image")
-// const imagesContainer = document.querySelector(".images__container")
+const imagesContainer = document.querySelector(".images__container")
 
 
 let inputQuery = "";
 
+function defaulter() {
+    const response = fetch(URL_RANDOM_UNSPLASH);
+    const responseJson = response.json();
+
+}
 
 
 // sending request and getting array by the Go! and Enter buttons
@@ -31,11 +36,22 @@ submit.addEventListener('click', async function (event) {
 
 })
 
-// showing an images (one image)) 
+
+// showing an images
 function showImages(arr) {
     arr.map(function (el) {
-        image.src = el.urls.raw;
-        image.alt = el.alt_description;
+        // for all array elements must be created corresponding HTML elements
+        const imageWrapper = document.createElement("div");
+        imageWrapper.classList.add('image__wrapper');
+        const image = document.createElement("img");
+        image.classList.add('image')
+
+        image.src = el.urls.small
+        image.alt = el.alt_description
+
+        // inserting new HTML elements inside container
+        imagesContainer.appendChild(imageWrapper)
+        imageWrapper.appendChild(image);
 
     })
 
