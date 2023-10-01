@@ -44,6 +44,8 @@ submit.addEventListener('click', async function (event) {
             errorSpan.classList.add('error-span')
             errorSpan.textContent = "OOOPS! No results found.";
             imagesContainer.appendChild(errorSpan);
+            const footer = document.querySelector(".footer");
+            footer.style.marginTop = '80vh'
         }
         showImages(responseJson.results) // this function has written below. it works with array 'responseJson.resutls'
     } catch (error) {

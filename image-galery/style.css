@@ -9,6 +9,10 @@ body {
   min-width: 320px;
   font-family: "Poppins", sans-serif;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 form {
   display: flex;
   justify-content: center;
@@ -98,4 +102,27 @@ form {
   .image__wrapper {
     width: 80%;
   }
+}
+.footer {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  bottom: 0;
+}
+.rs-logo {
+  margin-left: 20px;
+  max-width: 60px;
+  /* min-width: 40px; */
+  width: 100%;
+}
+.year {
+  font-size: 22px;
+}
+.my-github {
+  margin-right: 20px;
+  font-size: 22px;
 }
