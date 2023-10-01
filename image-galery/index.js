@@ -1,12 +1,8 @@
-
 const submit = document.querySelector(".submit-button");
 const UNSPLASH_KEY = '2DpVpbIORVf8uhlkQBcv528EkQ4Gw8xIkP1e6SF0Bxs';
 const FLICKR_KEY = 'd4b5c2dff986acd52b12fe74ce0b8851';
-// const form = document.querySelector(".form")
 const input = document.querySelector(".search__input")
 const imagesContainer = document.querySelector(".images__container")
-
-
 
 let inputQuery = "";
 
@@ -19,7 +15,7 @@ async function defaulter() {
             throw new Error('Random fetch response failed');
         }
         const responseJson = await response.json(); // in this case the 'response.json' is already array, because count=10 returns array
-        console.log(responseJson)
+        // console.log(responseJson)
         showImages(responseJson)
     } catch (error) {
         console.error('Some error:', error)
@@ -45,8 +41,11 @@ submit.addEventListener('click', async function (event) {
         if (responseJson.results.length === 0) {
 
             const errorSpan = document.createElement("span");
+            errorSpan.classList.add('error-span')
             errorSpan.textContent = "OOOPS! No results found.";
             imagesContainer.appendChild(errorSpan);
+            const footer = document.querySelector(".footer");
+            footer.style.marginTop = '80vh'
         }
         showImages(responseJson.results) // this function has written below. it works with array 'responseJson.resutls'
     } catch (error) {
@@ -66,22 +65,17 @@ function showImages(arr) {
         const image = document.createElement("img");
         image.classList.add('image');
 
-
         let ancor = document.createElement("a");
 
         image.src = el.urls.small;
         image.alt = el.alt_description;
 
-        ancor.href = el.urls.full; //
-
+        ancor.href = el.urls.full;
 
         // inserting new HTML elements inside container
         imagesContainer.appendChild(imageWrapper);
         imageWrapper.appendChild(ancor);
         ancor.appendChild(image)
-        // image.addEventListener('click', function (event) {
-        //     console.log(event.target)
-        // })
     })
 
 }
