@@ -13,10 +13,16 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.page__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 form {
   display: flex;
   justify-content: center;
   margin: 60px auto;
+  width: 100%;
 }
 .search__input_wrapper {
   display: flex;
@@ -111,18 +117,20 @@ form {
   display: flex;
   justify-content: space-between;
   margin-top: auto;
-  bottom: 0;
+  /* margin-bottom: 0; */
 }
 .rs-logo {
   margin-left: 20px;
   max-width: 60px;
-  /* min-width: 40px; */
   width: 100%;
 }
 .year {
-  font-size: 22px;
+  font-size: 20px;
 }
 .my-github {
-  margin-right: 20px;
+  margin-right: 18px;
   font-size: 22px;
+}
+.main {
+  height: 90vh;
 }
