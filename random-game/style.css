@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: #212225;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  min-height: 100vh;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.playfield__wrapper {
+  max-width: 600px;
+  width: 100%;
+  max-height: 600px;
+  border: 1px green solid;
+}
+.playfield {
+  max-width: 100%;
+  /*for square! old method and new method*/
+  padding-bottom: 100%;
+  aspect-ratio: 1/1;
+  background: #7e2335;
+  /* border: gold solid 1px; */
+  cursor: url(icons/crosshair.svg) 10 10, auto;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  align-items: center;
+}
+
+.rs-logo {
+  margin: 5px 0 0 20px;
+  max-width: 50px;
+  width: 100%;
+}
+.footer-right {
+  margin-right: 20px;
+}
+.year {
+  font-size: 14px;
+  margin-right: 15px;
+}
+.my-name {
+  font-weight: 600;
+}
