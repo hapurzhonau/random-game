@@ -44,6 +44,29 @@ body {
   flex-grow: 1;
   /* justify-content: center; */
 }
+.container {
+  display: flex;
+  align-items: baseline;
+  width: 90%;
+  justify-content: space-between;
+}
+.time__wrapper {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+}
+.time {
+  display: flex;
+  font-family: inherit;
+  margin: 20px 0;
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 0px;
+  background: #212225;
+  border-radius: 3px;
+  color: #d0d0d0;
+  box-shadow: 0 0 2px 0 rgb(255 255 255);
+}
 .start-button {
   font-family: inherit;
   margin: 20px 0;
@@ -55,6 +78,24 @@ body {
   color: #d0d0d0;
   box-shadow: 0 0 2px 0 rgb(255 255 255);
   cursor: pointer;
+}
+.hits-count__wrapper_outer {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.hits-count__wrapper {
+  display: flex;
+  font-family: inherit;
+  margin: 20px 0;
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 0px;
+  background: #212225;
+  border-radius: 3px;
+  color: #d0d0d0;
+  box-shadow: 0 0 2px 0 rgb(255 255 255);
 }
 .playfield__wrapper {
   position: relative;
@@ -89,11 +130,15 @@ body {
 .zombie__container {
   position: relative;
   width: 100%;
-  border-radius: 10px;
+  /* border: 1px solid red; */
+  /* border-radius: 10px; */
 }
 .zombie {
   position: absolute;
-  left: 200px;
+  /* top: 200px; */
+  user-select: none;
+  height: fit-content;
+  width: fit-content;
   /* top: 20px; */
   /* visibility: hidden; */
 }
