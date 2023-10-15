@@ -5,9 +5,11 @@ const zombieContainer = document.querySelector(".zombie__container")
 const zombie = document.querySelector(".zombie");
 const zombiesArr = ["zombie(1).png", "zombie(2).png", "zombie(3).png", "zombie(4).png", "zombie(5).png", "zombie(6).png", "zombie(7).png"];
 const hitsCount = document.querySelector(".hits-count")
-const timeElement = document.querySelector(".time")
+const timeElement = document.querySelector(".time");
+const liItems = document.querySelectorAll(".results__list_item")
 
-let duration = 3;
+let duration = 2;//round duration (sec)
+timeElement.innerHTML = duration;
 let count = 0;
 let sec = duration;
 let setIntervalId;
@@ -17,27 +19,33 @@ let setIntervalId;
 document.addEventListener("mousemove", function (event) {
     event.preventDefault();
 });
+document.addEventListener("focus", function (event) {
+    event.preventDefault();
+});
 
 // get random image from array of images
 function randomZombie() {
     let ind = Math.floor(Math.random() * zombiesArr.length); // random will give number which maximum equal array's length
     return zombiesArr[ind];
 };
-
+let isPlaying = false;
 // start button clicked
 startButton.addEventListener('click', function (event) {
-    playField.classList.toggle('invisible');
-    playFieldTwo.classList.toggle('invisible');
-    startButton.classList.toggle('check');
-    randomCoords();
-    zombie.src = `images/${randomZombie()}`;
-    if (startButton.classList.contains('check')) {
-        startButton.innerHTML = 'Stop';
-        timeElement.innerHTML = sec;
+    if (!isPlaying) {
+        playField.classList.toggle('invisible');
+        playFieldTwo.classList.toggle('invisible');
+        startButton.classList.toggle('check');
+        randomCoords();
+        zombie.src = `images/${randomZombie()}`;
+        if (startButton.classList.contains('check')) {
+            startButton.innerHTML = 'Stop';
+            timeElement.innerHTML = sec;
 
-        play();
+            play();
+        }
     } else {
         stop();
+
     }
 });
 console.log(zombie)
@@ -54,7 +62,7 @@ function play() {
 
 // create mouseDown handler, becouse when ananimous function inside event listener, it has unexpected behavior
 function mousDown(event) {
-    console.log(event);
+    // console.log(event);
     randomCoords()
     zombie.src = `images/${randomZombie()}`;
     zombie.alt = `${randomZombie()}`
@@ -66,9 +74,10 @@ function stop() {
     zombie.classList.add('invisible');
     randomCoords();
     sec = duration;
-    // hitsZero();
     playField.classList.add('invisible');
     stopTimer();
+    // localStorage.setItem('hits', count);
+    saveResults(count);
 };
 // get random zombie coordinates
 function randomCoords() {
@@ -80,10 +89,12 @@ function randomCoords() {
 function hitsUp() {
     count += 1;
     hitsCount.innerHTML = count;
+    return count;
 };
 function hitsZero() {
     count = 0;
     hitsCount.innerHTML = count;
+    // saveResults(count)
 }
 
 function decreaseTime() {
@@ -102,4 +113,20 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(setIntervalId)
+}
+
+
+const resultsArr = []; //JSON.parse(localStorage.getItem('results')) ||
+function saveResults(count) {
+
+    resultsArr.push(count);
+    if (resultsArr.length > 10) {
+        resultsArr.shift();
+    }
+    localStorage.setItem('hits', JSON.stringify(resultsArr));
+}
+
+
+function showResults() {
+    liItems.innerHTML = ``
 }
