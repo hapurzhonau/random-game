@@ -40,6 +40,7 @@ body {
 .header {
   display: flex;
   justify-content: end;
+  align-items: end;
 }
 .span-results {
   font-family: inherit;
@@ -150,7 +151,10 @@ body {
   /*for square! old method and new method*/
   /* padding-bottom: 100%; */
   /* aspect-ratio: 1/1; */
-  background: #ababab;
+  background-image: url(images/desktop-1920x1080.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   /* border: gold solid 1px; */
   cursor: url(icons/crosshair.svg) 10 10, auto;
   border-radius: 10px;
