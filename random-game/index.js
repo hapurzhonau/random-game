@@ -1,9 +1,9 @@
 const playField = document.querySelector(".playfield");
 const startButton = document.querySelector(".start-button");
 const playFieldTwo = document.querySelector(".playfield-two");
-const zombieContainer = document.querySelector(".zombie__container")
-const zombie = document.querySelector(".zombie");
-const zombiesArr = ["zombie(1).png", "zombie(2).png", "zombie(3).png", "zombie(4).png", "zombie(5).png", "zombie(6).png", "zombie(7).png"];
+const ghostContainer = document.querySelector(".ghost__container")
+const ghost = document.querySelector(".ghost");
+const ghostsArr = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png"];
 const hitsCount = document.querySelector(".hits-count")
 const timeElement = document.querySelector(".time");
 const resultsList = document.querySelector(".results__list");
@@ -23,8 +23,8 @@ document.addEventListener("mousemove", function (event) {
 
 // get random image from array of images
 function randomZombie() {
-    let ind = Math.floor(Math.random() * zombiesArr.length); // will give random number which maximum equal array's length
-    return zombiesArr[ind];
+    let ind = Math.floor(Math.random() * ghostsArr.length); // will give random number which maximum equal array's length
+    return ghostsArr[ind];
 };
 
 
@@ -41,33 +41,33 @@ startButton.addEventListener('click', function (event) {
     }
 });
 // --------------------------------------------------------
-// console.log(zombie)
+// console.log(ghost)
 // console.log(playField)
 
 
 function play() {
-    zombie.addEventListener('mousedown', mousDown);
+    ghost.addEventListener('mousedown', mousDown);
     startTimer();
     hitsZero();
-    zombie.classList.remove('invisible');
+    ghost.classList.remove('invisible');
     playField.classList.add('invisible');
     playFieldTwo.classList.add('invisible');
     startButton.innerHTML = 'Stop';
     randomCoords();
-    zombie.src = `images/${randomZombie()}`;
+    ghost.src = `images/${randomZombie()}`;
 };
 
 // create mouseDown handler, becouse when ananimous function inside event listener, it has unexpected behavior
 function mousDown() {
     randomCoords()
-    zombie.src = `images/${randomZombie()}`;
-    zombie.alt = `${randomZombie()}`
+    ghost.src = `images/${randomZombie()}`;
+    ghost.alt = `${randomZombie()}`
     hitsUp();
 
 }
 function stop() {
     startButton.innerHTML = 'Start';
-    zombie.classList.add('invisible');
+    ghost.classList.add('invisible');
     randomCoords();
     sec = duration;
     playField.classList.add('invisible');
@@ -78,10 +78,10 @@ function stop() {
     startButton.classList.remove('check');
     showResults(resultsArr)
 };
-// get random zombie coordinates
+// get random ghost coordinates
 function randomCoords() {
-    zombie.style.left = Math.random() * (playField.clientWidth - zombie.clientWidth) + 'px';
-    zombie.style.top = Math.random() * (playField.clientHeight - zombie.clientHeight) + 'px';
+    ghost.style.left = Math.random() * (playField.clientWidth - ghost.clientWidth) + 'px';
+    ghost.style.top = Math.random() * (playField.clientHeight - ghost.clientHeight) + 'px';
 }
 
 
@@ -120,15 +120,15 @@ function stopTimer() {
 const resultsArr = JSON.parse(localStorage.getItem('hits')) || []; // initial value of 'hits' must be array, else it will be error 'push is not a function'
 
 function saveResults(count) {
-    resultsArr.push(count);
+    resultsArr.unshift(count);
     if (resultsArr.length > 10) {
-        resultsArr.shift();
+        resultsArr.pop();
     }
     localStorage.setItem('hits', JSON.stringify(resultsArr));
 
 }
 
-// showing hits results in display
+// show hits results on display
 function showResults(arr) {
     resultsList.innerHTML = '';//clear perent
     arr.forEach((el) => {
