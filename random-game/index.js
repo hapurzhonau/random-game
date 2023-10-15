@@ -28,24 +28,16 @@ function randomZombie() {
     let ind = Math.floor(Math.random() * zombiesArr.length); // random will give number which maximum equal array's length
     return zombiesArr[ind];
 };
-let isPlaying = false;
+
 // start button clicked
 startButton.addEventListener('click', function (event) {
-    if (!isPlaying) {
-        playField.classList.toggle('invisible');
-        playFieldTwo.classList.toggle('invisible');
-        startButton.classList.toggle('check');
-        randomCoords();
-        zombie.src = `images/${randomZombie()}`;
-        if (startButton.classList.contains('check')) {
-            startButton.innerHTML = 'Stop';
-            timeElement.innerHTML = sec;
-
-            play();
-        }
+    event.preventDefault();
+    startButton.classList.add('check'); // marker 'check' for changing value of start/stop button
+    if (startButton.classList.contains('check')) {
+        timeElement.innerHTML = sec;
+        play();
     } else {
         stop();
-
     }
 });
 console.log(zombie)
@@ -57,7 +49,11 @@ function play() {
     startTimer();
     hitsZero();
     zombie.classList.remove('invisible');
-
+    playField.classList.add('invisible');
+    playFieldTwo.classList.add('invisible');
+    startButton.innerHTML = 'Stop';
+    randomCoords();
+    zombie.src = `images/${randomZombie()}`;
 };
 
 // create mouseDown handler, becouse when ananimous function inside event listener, it has unexpected behavior
@@ -78,6 +74,9 @@ function stop() {
     stopTimer();
     // localStorage.setItem('hits', count);
     saveResults(count);
+    playField.classList.remove('invisible');
+    playFieldTwo.classList.remove('invisible');
+    startButton.classList.remove('check');
 };
 // get random zombie coordinates
 function randomCoords() {
@@ -106,7 +105,6 @@ function decreaseTime() {
 }
 
 
-
 function startTimer() {
     setIntervalId = setInterval(decreaseTime, 1000)
 }
@@ -116,17 +114,23 @@ function stopTimer() {
 }
 
 
-const resultsArr = []; //JSON.parse(localStorage.getItem('results')) ||
-function saveResults(count) {
+// localStorage.removeItem('hits', 666)
 
+// saving results in localStorage
+const resultsArr = JSON.parse(localStorage.getItem('hits')) || []; // initial value of 'hits' must be array, else it will be error 'push is not a function'
+
+function saveResults(count) {
     resultsArr.push(count);
     if (resultsArr.length > 10) {
         resultsArr.shift();
     }
     localStorage.setItem('hits', JSON.stringify(resultsArr));
+    return resultsArr;
 }
 
 
 function showResults() {
-    liItems.innerHTML = ``
+    liItems.innerHTML = resultsArr[resultsArr.length - 1];
+
 }
+showResults()
