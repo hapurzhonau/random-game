@@ -15,7 +15,6 @@ let count = 0;
 let sec = duration;
 let setIntervalId;
 
-
 // ban mouse moves events 
 document.addEventListener("mousemove", function (event) {
     event.preventDefault();
@@ -26,7 +25,6 @@ function randomZombie() {
     let ind = Math.floor(Math.random() * ghostsArr.length); // will give random number which maximum equal array's length
     return ghostsArr[ind];
 };
-
 
 // -------------------START GAME!!!-----------------------
 // start button clicked
@@ -41,9 +39,6 @@ startButton.addEventListener('click', function (event) {
     }
 });
 // --------------------------------------------------------
-// console.log(ghost)
-// console.log(playField)
-
 
 function play() {
     ghost.addEventListener('mousedown', mousDown);
@@ -84,7 +79,6 @@ function randomCoords() {
     ghost.style.top = Math.random() * (playField.clientHeight - ghost.clientHeight) + 'px';
 }
 
-
 function hitsUp() {
     count += 1;
     hitsCount.innerHTML = count;
@@ -104,7 +98,6 @@ function decreaseTime() {
     }
 }
 
-
 function startTimer() {
     setIntervalId = setInterval(decreaseTime, 1000)
 }
@@ -112,9 +105,6 @@ function startTimer() {
 function stopTimer() {
     clearInterval(setIntervalId)
 }
-
-
-// localStorage.removeItem('hits', 666)
 
 // saving results in localStorage
 const resultsArr = JSON.parse(localStorage.getItem('hits')) || []; // initial value of 'hits' must be array, else it will be error 'push is not a function'
@@ -125,7 +115,6 @@ function saveResults(count) {
         resultsArr.pop();
     }
     localStorage.setItem('hits', JSON.stringify(resultsArr));
-
 }
 
 // show hits results on display
